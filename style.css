@@ -5,12 +5,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
 }
 
 html {
@@ -55,11 +53,9 @@ nav { /* Dark background for contrast */
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
-    font-size: 1.2rem;
+    gap: 1.5rem;
+    font-size: 1.5rem;
     text-align: center;
-    flex-direction: column;
-    padding: 1rem 0;  
   }
   
   .nav-links li a {
@@ -104,24 +100,9 @@ a:hover {
 }
 
 /* HAMBURGER MENU */
-#hamburger-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  width: 100%;
-}
 
-.menu-links {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 100%;
-  background-color: white;
-  text-align: center;
-  padding: 1rem 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
+#hamburger-nav {
+  display: none;
 }
 
 .hamburger-menu {
@@ -267,17 +248,9 @@ section {
   margin: auto 0;
 }
 
-.section__pic-container img {
-  width: 80%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 .section__text {
   align-self: center;
   text-align: center;
-  padding: 0 1rem;
 }
 
 .section__text p {
