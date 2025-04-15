@@ -43,3 +43,8 @@ function rotateTagline() {
 
 rotateTagline();
 setInterval(rotateTagline, 4000); // change every 4 seconds
+
+document.addEventListener("DOMContentLoaded", function () {
+  rotateTagline();
+  setInterval(rotateTagline, 4000);
+});
