@@ -280,11 +280,14 @@ section {
 
 /*TAGLINE STYLING*/
 .tagline {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #444;
   font-style: italic;
-  animation: fadein 1s ease-in-out;
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  text-align: center;
+  animation: fadein 2s ease-in-out;
 }
 
 @keyframes fadein {
