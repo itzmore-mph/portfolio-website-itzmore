@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Privacy Policy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    #privacy {
+      max-width: 900px;
+      margin: 6rem auto;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+
+    #privacy h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    #privacy h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #111;
+    }
+
+    #privacy p {
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+    }
+
+    #privacy a {
+      color: black;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    #privacy a:hover {
+      text-decoration: none;
+    }
+
+    .language-toggle {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .language-toggle button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .language-toggle button:hover {
+      background-color: #f1f1f1;
+    }
+
+    .language-content {
+      display: none;
+    }
+
+    .language-content.active {
+      display: block;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <section id="privacy">
+    <div class="language-toggle">
+      <button onclick="toggleLanguage('en')">English</button>
+      <button onclick="toggleLanguage('de')">Deutsch</button>
+    </div>
+
+    <div id="privacy-en" class="language-content active">
+      <h1>Privacy Policy</h1>
+      <p><strong>Last Updated:</strong> April 2025</p>
+
+      <h2>1. General Information</h2>
+      <p>This website is a personal portfolio created by Moritz Philipp Haaf. Protecting your personal data is important to me. This privacy policy explains how I handle and protect your data in accordance with the General Data Protection Regulation (GDPR).</p>
+
+      <h2>2. Data Collection</h2>
+      <p>This website does not use cookies or tracking tools. However, when you visit, certain technical data (e.g., IP address, browser type, date/time of access) may be logged by the hosting provider to ensure website functionality and security.</p>
+
+      <h2>3. Contact via Email</h2>
+      <p>If you contact me via email, your personal data (e.g., name, email address, message content) will only be used for the purpose of communication and will not be shared without your consent.</p>
+
+      <h2>4. External Links</h2>
+      <p>This site may include links to external services such as GitHub, LinkedIn, or Streamlit. I am not responsible for their data protection practices. Please refer to the respective providers’ privacy policies.</p>
+
+      <h2>5. Your Rights</h2>
+      <p>According to the GDPR, you have the right to access, correct, delete, and restrict the use of your personal data. You also have the right to lodge a complaint with the data protection authority.</p>
+
+      <h2>6. Contact</h2>
+      <p>For any data protection questions, please contact:</p>
+      <p><strong>Name:</strong> Moritz Philipp Haaf</p>
+      <p><strong>Email:</strong> <a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+
+      <a class="back-link" href="index.html">← Back to Portfolio</a>
+    </div>
+
+    <div id="privacy-de" class="language-content">
+      <h1>Datenschutzerklärung</h1>
+      <p><strong>Stand:</strong> April 2025</p>
+
+      <h2>1. Allgemeine Informationen</h2>
+      <p>Diese Website ist ein persönliches Portfolio von Moritz Philipp Haaf. Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Datenschutzerklärung informiert Sie darüber, wie ich Ihre Daten gemäß der Datenschutz-Grundverordnung (DSGVO) verarbeite.</p>
+
+      <h2>2. Datenerhebung</h2>
+      <p>Diese Website verwendet keine Cookies oder Tracking-Tools. Beim Besuch der Website können jedoch technische Daten (z.B. IP-Adresse, Browsertyp, Datum/Uhrzeit des Zugriffs) vom Hosting-Anbieter gespeichert werden, um die Funktionalität und Sicherheit der Seite zu gewährleisten.</p>
+
+      <h2>3. Kontakt per E-Mail</h2>
+      <p>Wenn Sie mich per E-Mail kontaktieren, werden Ihre Daten (z.B. Name, E-Mail-Adresse, Nachrichteninhalt) ausschließlich zur Kommunikation genutzt und nicht ohne Ihre Zustimmung weitergegeben.</p>
+
+      <h2>4. Externe Links</h2>
+      <p>Diese Website enthält Links zu externen Diensten wie GitHub, LinkedIn oder Streamlit. Ich bin nicht verantwortlich für deren Datenschutzrichtlinien. Bitte informieren Sie sich bei den jeweiligen Anbietern.</p>
+
+      <h2>5. Ihre Rechte</h2>
+      <p>Gemäß DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Zudem können Sie sich bei der Datenschutzbehörde beschweren.</p>
+
+      <h2>6. Kontakt</h2>
+      <p>Für Fragen zum Datenschutz kontaktieren Sie bitte:</p>
+      <p><strong>Name:</strong> Moritz Philipp Haaf</p>
+      <p><strong>E-Mail:</strong> <a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+
+      <a class="back-link" href="index.html">← Zurück zum Portfolio</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleLanguage(lang) {
+      document.querySelectorAll('.language-content').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.getElementById(`privacy-${lang}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

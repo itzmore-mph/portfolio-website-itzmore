@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Legal Notice / Impressum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    #imprint {
+      max-width: 900px;
+      margin: 6rem auto;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+
+    #imprint h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    #imprint h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #111;
+    }
+
+    #imprint p {
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+    }
+
+    #imprint strong {
+      color: #000;
+    }
+
+    #imprint a {
+      color: black;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    #imprint a:hover {
+      text-decoration: none;
+    }
+
+    .language-toggle {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .language-toggle button {
+      background-color: transparent;
+      border: 1px solid #333;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .language-toggle button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <section id="imprint">
+    <div class="imprint-wrapper">
+      <div class="language-toggle">
+        <button onclick="toggleLanguage('en')">English</button>
+        <button onclick="toggleLanguage('de')">Deutsch</button>
+      </div>
+
+      <div id="imprint-en" class="language-content">
+        <h1>Legal Notice</h1>
+        <p><strong>Name:</strong> Moritz Philipp Haaf</p>
+        <p><strong>Address:</strong> Rupertgasse 3/9, 1140 Vienna, Austria</p>
+        <p><strong>Email:</strong> <a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+        <p><strong>Responsible Authority under ECG:</strong> Municipal District Office for the 13th and 14th Districts, City of Vienna</p>
+        <p><strong>Applicable Legal Provisions:</strong> Gewerbeordnung (Trade Regulation Act), available at <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></p>
+
+        <h2>Disclaimer</h2>
+        <p>This website contains links to external websites of third parties, the content of which is beyond our control. Therefore, we cannot accept any liability for external content. The respective provider or operator is always responsible for the content of the linked pages.</p>
+        <p>All content on this website has been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content.</p>
+        <p><a href="index.html" class="back-link">← Back to Home</a></p>
+      </div>
+
+      <div id="imprint-de" class="language-content" style="display: none;">
+        <h1>Impressum</h1>
+        <p><strong>Name:</strong> Moritz Philipp Haaf</p>
+        <p><strong>Anschrift:</strong> Rupertgasse 3/9, 1140 Wien, Österreich</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+        <p><strong>Behörde gemäß ECG:</strong> Magistrat der Stadt Wien - Magistratisches Bezirksamt für den 13. und 14. Bezirk</p>
+        <p><strong>Anwendbare Vorschriften:</strong> Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></p>
+
+        <h2>Haftungsausschluss</h2>
+        <p>Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte kein Einfluss besteht. Deshalb wird für diese fremden Inhalte auch keine Gewähr übernommen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+        <p>Alle Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+        <p><a href="index.html" class="back-link">← Zurück zur Startseite</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleLanguage(lang) {
+      document.getElementById("imprint-en").style.display = lang === "en" ? "block" : "none";
+      document.getElementById("imprint-de").style.display = lang === "de" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

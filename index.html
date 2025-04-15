@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <title>Moritz Philipp Haaf | Data Analyst | Portfolio</title>
+  
+    <!-- Meta Description (only one!) -->
+    <meta name="description" content="Portfolio of Moritz Philipp Haaf, Data Analyst focusing on football analytics, data visualization, and machine learning.">
+  
+    <!-- Keywords (only one needed, keep concise) -->
+    <meta name="keywords" content="Data Analyst, Football Analytics, Sports Analytics, Python, Streamlit, Portfolio">
+  
+    <meta name="author" content="Moritz Philipp Haaf" />
+  
+    <!-- Open Graph for social media sharing -->
+    <meta property="og:title" content="Moritz Philipp Haaf – Data Analyst Portfolio" />
+    <meta property="og:description" content="Explore data analytics and football data projects built with Python, Streamlit & more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/your-og-image.png" />
+    <meta property="og:url" content="https://your-website.com" />
+  
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  
+    <!-- Favicon -->
+    <link rel="icon" href="favicon_from_blackbird.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Analyzing the World, One Byte at a Time</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="profile-container">
+        <div class="section__pic-container">
+          <img src="./assets/profile-pic.png" alt="Moritz profile picture" />
+        </div>
+        <div class="section__text">
+          <p class="section__text__p1">Hello, I'm</p>
+          <h1 class="title">Moritz Philipp Haaf</h1>
+          <p class="section__text__p2">Data Analyst focused on Data & Football Analytics</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('./assets/CV Moritz Philipp Haaf.pdf', '_blank')">Download CV</button>
+            <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+          </div>
+          <div id="socials-container">
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+                 onclick="location.href='https://www.linkedin.com/in/moritz-philipp-haaf/'" />
+            <img src="./assets/github.png" alt="My Github profile" class="icon"
+                 onclick="location.href='https://github.com/itzmore-mph'" />
+          </div>
+        </div>
+      </div>
+    
+      <!-- Arrow BELOW the flex container -->
+      <div class="arrow-wrapper">
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll down"
+          class="section-arrow"
+          onclick="location.href='#about'"
+        />
+      </div>
+    </section>
+    
+      <section id="about" class="section">
+        <div class="section-heading">
+          <p class="subtitle">Get To Know More</p>
+          <h1>About Me</h1>
+        </div>
+        <div class="about-wrapper">
+          <div class="about-left">
+            <img src="./assets/profile-pic-2.png" alt="Profile picture" class="about-img" />
+          </div>
+          <div class="about-right">
+            <div class="about-highlight-boxes">
+              <div class="details-container">
+                <img src="./assets/experience.png" alt="Experience Icon" class="icon" />
+                <h3>Experience</h3>
+                <p>5+ years<br>Data Analytics</p>
+              </div>
+              <div class="details-container">
+                <img src="./assets/education.png" alt="Education Icon" class="icon" />
+                <h3>Education</h3>
+                <p>B.Sc. Business Administration<br>M.A. Digital Media Management</p>
+              </div>
+            </div>
+            <div class="about-text">
+              <p>
+                I am a certified Data Analyst with a passion for transforming complex datasets into actionable insights that drive business growth and operational efficiency. With a strong background in sports, media, and technology, I excel at leveraging data-driven strategies to enhance decision-making and optimize performance. My technical toolkit includes Python, SQL, R, Tableau, Looker Studio, Datorama, and Power BI, which I utilize to analyze data, automate workflows, and deliver results that make a difference.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="arrow-wrapper">
+          <img
+            src="./assets/arrow.png"
+            alt="Scroll down"
+            class="section-arrow"
+            onclick="location.href='#experience'"
+          />
+        </div>
+      </section>
+    <section id="experience">
+      <div class="section-heading">
+        <p class="subtitle">Explore My</p>
+        <h1>Professional Journey</h1>
+      </div>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <span class="date">01/2025 – current</span>
+          <h3>Publicis Media Austria</h3>
+          <p><strong>Senior Digital Data & Dashboard Manager</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Develop and implement dashboards and automation for digital campaigns.</li>
+              <li>Consult on AI-driven data strategy and product development.</li>
+              <li>Facilitate cross-functional collaboration within the agency and network.</li>
+              <li>Lead data visualization and automation initiatives.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">07/2024 – 12/2024</span>
+          <h3>Regionalmedien Austria AG</h3>
+          <p><strong>Analytics & Ad Tech Development Manager</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Optimized RMA’s Ad-Tech-Stack and implemented data-driven strategies.</li>
+              <li>Analyzed user flow with Google Analytics & Piano Analytics.</li>
+              <li>Managed data platforms and Looker dashboard development.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">08/2022 – 04/2024</span>
+          <h3>Red Bull Media House</h3>
+          <p><strong>Digital Competence & Ad Tech Specialist</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Analyzed digital user data and optimized monetization.</li>
+              <li>Managed YouTube & Red Bull campaign operations.</li>
+              <li>Introduced technical ad solutions with internal teams.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">10/2021 – 09/2022</span>
+          <h3>Sportradar Media Services GmbH</h3>
+          <p><strong>Manager Digital Advertising</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Optimized programmatic ads using data analysis & ML.</li>
+              <li>Built audience segmentation models.</li>
+              <li>Ran A/B tests for digital performance insights.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">06/2021 – 08/2022</span>
+          <h3>Hawk-Eye Innovations Ltd</h3>
+          <p><strong>Football Systems Operator</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Operated VAR and video replay systems for UEFA & Bundesliga.</li>
+              <li>Supported match decisions via replay technology.</li>
+              <li>Improved processes with project management skills.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">02/2019 – 09/2022</span>
+          <h3>E2 Communications GmbH</h3>
+          <p><strong>Oddsserve & Ad Operations Manager</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Managed ad operations across platforms like Adform & Epom.</li>
+              <li>Built client websites with analytics in WordPress.</li>
+              <li>Enhanced campaign reporting with data-driven tools.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="experience-card">
+          <span class="date">08/2016</span>
+          <h3>TorAlarm GmbH</h3>
+          <p><strong>Internship</strong></p>
+          <button class="toggle-btn" onclick="toggleDetails(this)">Show Details</button>
+          <div class="job-details hidden">
+            <ul>
+              <li>Improved database structures for better efficiency.</li>
+              <li>Contributed to user growth & sales initiatives.</li>
+              <li>Helped integrate Alexa skills into products.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-wrapper">
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll down"
+          class="section-arrow"
+          onclick="location.href='#skills'"
+        />
+      </div>
+      
+    </section>
+    <section id="skills">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skill Set</h1>
+    
+      <div class="skills-box">
+        <h3>Core Competencies</h3>
+        <div class="skills-columns">
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Data Analytics</strong>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Data Science</strong>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Business Intelligence</strong>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Data Visualization</strong>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Dashboard Development</strong>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Ad Tech</strong>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>Project Management</strong>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/checkmark.png" alt="icon" />
+            <strong>AI & Machine Learning</strong>
+            <span>Basic</span>
+          </div>
+        </div>
+      </div>
+      <div class="skills-box">
+        <h3>Tools & Technologies</h3>
+        <div class="skills-columns">
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Python</strong><span>Experienced</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>SQL</strong><span>Experienced</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>R</strong><span>Basic</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Datorama</strong><span>Experienced</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Tableau</strong><span>Intermediate</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Power BI</strong><span>Intermediate</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Looker Studio</strong><span>Intermediate</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Streamlit</strong><span>Basic</span></div>
+          <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Git, GitHub</strong><span>Intermediate</span></div>
+        </div>
+      </div>
+      <div class="arrow-wrapper">
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll down"
+          class="section-arrow"
+          onclick="location.href='#projects'"
+        />
+      </div>
+    </section>    
+    <section id="projects">
+      <p class="section__text__p1">Check Out My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">              
+              <div class="details-container color-container">
+                <div class="article-container">
+                  <img
+                    src="./assets/project-1.png"
+                    alt="Streamlit Dashboard Preview"
+                    class="project-img"
+                  />
+                </div>
+              </div>
+            </div>
+            <h2 class="experience-sub-title project-title">Football Analytics Portfolio - Expected Goals (xG) & Passing Networks</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/itzmore-mph/football-analytics-portfolio'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://football-analytics-portfolio.streamlit.app/'"
+              >
+                Open Streamlit Dashboard
+              </button>
+            </div>
+            <div class="project-card-full">
+              <div class="project-overview">
+                <h3>Project Overview</h3>
+                <p>
+                  Developed a football analytics project applying machine learning and data visualization to analyze expected goals (xG) and passing networks. Built an xG prediction model using XGBoost and analyzed team passing structures with NetworkX. The results are displayed in an interactive Streamlit dashboard. You can find the complete implementation and code in the accompanying 
+                  <a href="https://github.com/your-repo-link" target="_blank">GitHub repository</a>.
+                </p>
+              </div>
+            
+              <hr />
+            
+              <div class="project-tech">
+                <h4>Technologies Used:</h4>
+                <ul>
+                  <li><strong>Programming Language:</strong> Python</li>
+                  <li><strong>Machine Learning:</strong> XGBoost, scikit-learn</li>
+                  <li><strong>Data Processing:</strong> pandas, NumPy</li>
+                  <li><strong>Data Visualization:</strong> mplsoccer, Matplotlib, Plotly</li>
+                  <li><strong>Web App:</strong> Streamlit</li>
+                  <li><strong>Data Source:</strong> StatsBomb event data</li>
+                  <li><strong>Version Control:</strong> Git, GitHub</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="more-projects-coming">
+        <p>More to come...</p>
+      </div>
+      <div class="arrow-wrapper">
+        <img
+          src="./assets/arrow.png"
+          alt="Scroll down"
+          class="section-arrow"
+          onclick="location.href='#contact'"
+        />
+      </div>      
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/moritz-philipp-haaf/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+    <div class="cta-footer">
+      <h2>Let's Talk Football Data</h2>
+      <p>If you're looking for someone to turn complex football data into powerful insights, let's connect!</p>
+      <a href="#contact" class="btn btn-color-1">Get in Touch</a>
+    </div>
+  </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2025 Moritz Philipp Haaf. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
