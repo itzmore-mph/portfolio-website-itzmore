@@ -26,3 +26,20 @@ function toggleLanguage(lang) {
   document.getElementById("imprint-en").style.display = lang === "en" ? "block" : "none";
   document.getElementById("imprint-de").style.display = lang === "de" ? "block" : "none";
 }
+
+//Rotating taglines on the homepage
+const taglines = [
+  "The Beautiful Game, Explained with Data.",
+  "Where Code Meets the Game.",
+  "Powered by Python. Inspired by Football."
+];
+let index = 0;
+const taglineElement = document.getElementById("tagline");
+
+function rotateTagline() {
+  taglineElement.textContent = taglines[index];
+  index = (index + 1) % taglines.length;
+}
+
+rotateTagline();
+setInterval(rotateTagline, 4000); // change every 4 seconds

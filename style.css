@@ -278,6 +278,21 @@ section {
   gap: 1rem;
 }
 
+/*TAGLINE STYLING*/
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #444;
+  font-style: italic;
+  animation: fadein 1s ease-in-out;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
 /* ICONS */
 
 .icon {
