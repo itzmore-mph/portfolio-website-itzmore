@@ -17,7 +17,7 @@
     display: none;
   }
   #hamburger-nav {
-    display: flex;
+    display: block;
   }
   #experience,
   .experience-details-container {
