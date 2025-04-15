@@ -130,20 +130,6 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.menu-links {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: 200px;
-  max-height: 0;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: max-height 0.3s ease-in-out;
-  border-radius: 0.5rem;
-  padding: 0;
-}
-
 .menu-links a {
   display: block;
   padding: 12px 16px;
@@ -161,8 +147,32 @@ a:hover {
   list-style: none;
 }
 
+
+/* Navigation Menu */
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* full viewport width */
+  height: 100vh;
+  background-color: white;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
 .menu-links.open {
-  max-height: 300px;
+  display: flex;
+}
+
+/* Make sure the body does not scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
 }
 
 .hamburger-icon.open span:first-child {
