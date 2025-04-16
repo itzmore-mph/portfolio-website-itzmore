@@ -1,193 +1,154 @@
-/* mediaqueries.css */
-
 /* ===========================
-   RESPONSIVE STYLES
+   MEDIA QUERIES (Responsive Layouts)
 =========================== */
 
-/* ===== 1. Mobile Portrait (≤ 320px) ===== */
+/* ========== 1. Mobile Portrait (<= 320px) ========== */
 @media screen and (max-width: 320px) {
-  /* Nav */
-  #desktop-nav { display: none; }
-  #hamburger-nav { display: block; }
-  .full-logo { display: none; }
-  .short-logo { display: inline; }
+  .hamburger-icon {
+    right: 1rem;
+    top: 1rem;
+    padding: 0.5rem;
+  }
 
-  /* Profile */
-  #profile {
-    max-width: 600px;
-    margin: 0 auto;
+  .section__text__p2,
+  .title,
+  .section-heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  footer .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ========== 2. Mobile Landscape (321px–480px) ========== */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .hamburger-icon {
+    right: 1.25rem;
+    top: 1rem;
+    padding: 0.5rem;
+  }
+
+  section {
     padding: 2rem 1rem;
-    text-align: center;
   }
 
-  /* Flex wrappers → column */
-  .profile-container,
-  .about-wrapper,
-  .experience-grid,
-  .skills-wrapper,
-  .about-highlight-boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    width: 100%;
+  .section__pic-container {
+    height: 250px;
+    width: 250px;
   }
 
-  /* Buttons */
-  .btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    width: 100%;
-    align-items: center;
+  .section__text {
+    padding: 0 1rem;
   }
+
   .btn {
     width: 90%;
-    margin-bottom: 0.5rem;
   }
 
-  /* Sections & text */
-  section { padding: 2rem 1rem; }
-  .section-container { margin: 0; }
-  .section__pic-container { height: 200px; width: 200px; }
-  .section-heading h1,
-  .title { font-size: 1.75rem; }
-  .section__text { padding: 0 1rem; }
-  .section__text__p2 { font-size: 1rem; }
+  .project-img {
+    max-height: 200px;
+  }
 
-  /* Footer nav vertical & centered */
   footer .nav-links {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 0;
+    gap: 1.25rem;
   }
 }
 
-/* ===== 2. Mobile Landscape (321px–480px) ===== */
-@media screen and (min-width: 321px) and (max-width: 480px) {
-  /* Inherit portrait‑mobile rules */
-  /* Tweak hamburger icon & nav padding */
+/* ========== 3. Tablet Portrait (481px–768px) ========== */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: block;
+  }
+
   .hamburger-icon {
-    top: 1rem;
-    right: 1rem;
+    top: 1.25rem;
+    right: 1.25rem;
     padding: 0.75rem;
   }
-  nav {
-    padding-right: 2rem;
-  }
-}
 
-/* ===== 3. Tablets Portrait (481px–768px) ===== */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  /* Nav still mobile style */
-  #desktop-nav { display: none; }
-  #hamburger-nav { display: block; }
-
-  /* Logo switch */
-  .full-logo { display: none; }
-  .short-logo { display: inline; }
-
-  /* Profile */
-  #profile {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
+  .section-container {
+    margin: 0 1rem;
   }
 
-  /* Flex wrappers */
-  .profile-container,
-  .about-wrapper,
-  .experience-grid,
-  .skills-wrapper,
-  .about-highlight-boxes {
+  .btn-container {
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
     width: 100%;
   }
 
-  /* Buttons */
-  .btn { width: 85%; }
+  .btn {
+    width: 80%;
+  }
 
-  /* Section image */
-  .section__pic-container { height: 250px; width: 250px; }
-
-  /* Footer nav */
-  footer .nav-links {
-    gap: 0.9rem;
+  .skills-columns {
+    grid-template-columns: 1fr;
   }
 }
 
-/* ===== 4. Tablets Landscape & Small Desktops (769px–1024px) ===== */
+/* ========== 4. Tablet Landscape / Small Desktop (769px–1024px) ========== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* Sticky desktop nav */
   #desktop-nav {
-    display: flex;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 60px;
-    padding: 0 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: white;
-    z-index: 1000;
-  }
-  main {
-    margin-top: calc(60px + env(safe-area-inset-top));
-  }
-  #hamburger-nav { display: none; }
-
-  /* Logo sizing */
-  .logo { font-size: 1.3rem; max-width: 60%; }
-
-  /* Profile */
-  #profile {
-    width: 100%;
-    padding: var(--space-lg) 2rem;
-    margin: 0;
-    max-width: none;
+    display: none;
   }
 
-  /* Section image */
-  .section__pic-container { height: 300px; width: 300px; }
+  #hamburger-nav {
+    display: block;
+  }
 
-  /* Flex wrappers */
-  .about-wrapper { flex-direction: column; }
-  .experience-grid { gap: var(--space-md); }
-  .experience-card { flex: 1 1 90%; }
+  .section-container {
+    margin: 0 2rem;
+  }
 
-  /* Buttons */
-  .btn-container { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-  .btn { min-width: 40%; margin: 0.5rem; }
+  .section__pic-container {
+    height: 300px;
+    width: 300px;
+  }
 
-  /* Project image */
-  .project-img { max-height: 300px; }
+  .skills-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    min-width: 40%;
+    margin-bottom: 1rem;
+  }
 }
 
-/* ===== 5. Desktops (1025px–1200px) ===== */
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* Profile returns to container width */
-  #profile {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: var(--space-lg) 0;
+/* ========== 5. Large Desktops (>= 1200px) ========== */
+@media screen and (min-width: 1200px) {
+  .section__text {
+    padding: 0 3rem;
   }
-  .section__text { padding: 0 3rem; }
-  .skills-columns { grid-template-columns: repeat(2,1fr); }
-  .experience-grid { gap: var(--space-lg); }
-}
 
-/* ===== 6. Large Desktops (≥ 1201px) ===== */
-@media screen and (min-width: 1201px) {
-  /* Profile fixed max width */
-  #profile {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-lg) 0;
+  .skills-columns {
+    grid-template-columns: repeat(3, 1fr);
   }
-  /* No further overrides needed */
+
+  .experience-grid {
+    gap: 2rem;
+  }
+
+  footer {
+    padding: 2rem 3rem;
+  }
+
+  footer .nav-links {
+    gap: 2rem;
+  }
 }
