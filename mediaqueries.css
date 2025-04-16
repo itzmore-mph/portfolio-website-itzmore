@@ -4,30 +4,101 @@
    RESPONSIVE STYLES
 =========================== */
 
-/* ===== Mobile & Small Tablets (<=768px) ===== */
-@media screen and (max-width: 768px) {
-  /* Desktop‑Nav ausblenden, Hamburger‑Nav zeigen */
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: block;
-  }
-  .full-logo {
-    display: none;
-  }
-  .short-logo {
-    display: inline;
-  }
+/* ===== 1. Mobile Portrait (≤ 320px) ===== */
+@media screen and (max-width: 320px) {
+  /* Nav */
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: block; }
+  .full-logo { display: none; }
+  .short-logo { display: inline; }
 
-  /* Profil‑Sektion zentrieren */
+  /* Profile */
   #profile {
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    text-align: center;
   }
 
-  /* Flex‑Wrappers auf Spalten umstellen */
+  /* Flex wrappers → column */
+  .profile-container,
+  .about-wrapper,
+  .experience-grid,
+  .skills-wrapper,
+  .about-highlight-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  /* Buttons */
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+    align-items: center;
+  }
+  .btn {
+    width: 90%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Sections & text */
+  section { padding: 2rem 1rem; }
+  .section-container { margin: 0; }
+  .section__pic-container { height: 200px; width: 200px; }
+  .section-heading h1,
+  .title { font-size: 1.75rem; }
+  .section__text { padding: 0 1rem; }
+  .section__text__p2 { font-size: 1rem; }
+
+  /* Footer nav vertical & centered */
+  footer .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+}
+
+/* ===== 2. Mobile Landscape (321px–480px) ===== */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* Inherit portrait‑mobile rules */
+  /* Tweak hamburger icon & nav padding */
+  .hamburger-icon {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.75rem;
+  }
+  nav {
+    padding-right: 2rem;
+  }
+}
+
+/* ===== 3. Tablets Portrait (481px–768px) ===== */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Nav still mobile style */
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: block; }
+
+  /* Logo switch */
+  .full-logo { display: none; }
+  .short-logo { display: inline; }
+
+  /* Profile */
+  #profile {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  /* Flex wrappers */
   .profile-container,
   .about-wrapper,
   .experience-grid,
@@ -39,216 +110,84 @@
     width: 100%;
   }
 
-  /* Buttons full‑width */
-  .btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    width: 100%;
-    align-items: center; 
-  }
-  .btn {
-    width: 90%;
-    margin-bottom: 0.5rem;
-  }
+  /* Buttons */
+  .btn { width: 85%; }
 
-  /* Sektionen enger */
-  section {
-    padding: 2rem 1rem;
-  }
-  .section-container {
-    margin: 0;
-  }
+  /* Section image */
+  .section__pic-container { height: 250px; width: 250px; }
 
-  /* Profilbild anpassen */
-  .section__pic-container {
-    height: 250px;
-    width: 250px;
-  }
-
-  /* Texte kleiner */
-  .section-heading h1,
-  .title {
-    font-size: 2rem;
-  }
-  .section__text {
-    padding: 0 1rem;
-  }
-  .section__text__p2 {
-    font-size: 1.1rem;
-  }
-
-  /* Tagline & More */
-  .tagline {
-    font-size: 1rem;
-    padding: 0 0.75rem;
-    margin: 1rem 0 1.5rem;
-  }
-  .more-projects-coming {
-    font-size: 1.25rem;
-    padding: 0 1rem;
-    margin-bottom: 2rem;
-  }
-
-  /* Keine Überläufe */
-  h3,
-  p {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Karten, Skills, Projekte */
-  .experience-card,
-  .skills-box,
-  .project-card-full,
-  .project-description {
-    padding: 1.5rem 1rem;
-    width: 100%;
-  }
-  .experience-card h3 {
-    font-size: 1rem;
-  }
-  .project-img {
-    max-height: 200px;
-  }
-  .project-description,
-  .project-card-full {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  .project-tech ul {
-    padding-left: 1rem;
-  }
-
-  /* Kontakt kompakt */
-  #contact {
-    padding: 2rem 1rem;
-  }
-  .contact-info-upper-container {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .contact-info-container {
-    font-size: 1rem;
-  }
-  .contact-link {
-    padding: 0.5rem;
-  }
-  .contact-icon,
-  .email-icon {
-    height: 2rem;
-  }
-
-  /* Footer links vertikal */
+  /* Footer nav */
   footer .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  /* Pfeil‑Spacing */
-  .arrow-wrapper {
-    margin: 1rem 0 2rem;
+    gap: 0.9rem;
   }
 }
 
-/* ===== Very Small Screens (<=480px) ===== */
-@media screen and (max-width: 480px) {
-  .hamburger-icon {
-    top: 1rem;
-  }
-  nav {
-    padding-right: 3rem;
-  }
-}
-
-/* ===== Sticky Navbar & Profile auf Desktop (>=769px) ===== */
-@media screen and (min-width: 769px) {
-  /* Sticky Nav */
+/* ===== 4. Tablets Landscape & Small Desktops (769px–1024px) ===== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Sticky desktop nav */
   #desktop-nav {
+    display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
-    padding: 0 2.5rem;
+    height: 60px;
+    padding: 0 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+    z-index: 1000;
   }
   main {
-    margin-top: 10vh;
+    margin-top: calc(60px + env(safe-area-inset-top));
   }
-  #hamburger-nav {
-    display: none;
-  }
+  #hamburger-nav { display: none; }
 
-  /* Profile full‑width mit gleichem Padding */
+  /* Logo sizing */
+  .logo { font-size: 1.3rem; max-width: 60%; }
+
+  /* Profile */
   #profile {
     width: 100%;
-    padding: var(--space-lg) 2.5rem;
+    padding: var(--space-lg) 2rem;
     margin: 0;
     max-width: none;
   }
+
+  /* Section image */
+  .section__pic-container { height: 300px; width: 300px; }
+
+  /* Flex wrappers */
+  .about-wrapper { flex-direction: column; }
+  .experience-grid { gap: var(--space-md); }
+  .experience-card { flex: 1 1 90%; }
+
+  /* Buttons */
+  .btn-container { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .btn { min-width: 40%; margin: 0.5rem; }
+
+  /* Project image */
+  .project-img { max-height: 300px; }
 }
 
-/* ===== Tablets & Small Laptops (769px–1024px) ===== */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo {
-    font-size: 1.2rem;
-    max-width: 60%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* ===== 5. Desktops (1025px–1200px) ===== */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* Profile returns to container width */
+  #profile {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-lg) 0;
   }
-  .section__pic-container {
-    height: 300px;
-    width: 300px;
-  }
-  .section__text {
-    padding: 0 2rem;
-  }
-  .about-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .experience-grid {
-    gap: 1.5rem;
-  }
-  .experience-card {
-    flex: 1 1 90%;
-  }
-  .skills-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .btn-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .btn {
-    min-width: 40%;
-    margin-bottom: 1rem;
-  }
-  .project-img {
-    max-height: 300px;
-  }
+  .section__text { padding: 0 3rem; }
+  .skills-columns { grid-template-columns: repeat(2,1fr); }
+  .experience-grid { gap: var(--space-lg); }
 }
 
-/* ===== Large Screens (>=1025px) ===== */
-@media screen and (min-width: 1025px) {
-  /* Profile wieder in Container‑Breite */
+/* ===== 6. Large Desktops (≥ 1201px) ===== */
+@media screen and (min-width: 1201px) {
+  /* Profile fixed max width */
   #profile {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--space-lg) 0;
   }
-  .section__text {
-    padding: 0 3rem;
-  }
-  .skills-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .experience-grid {
-    gap: 2rem;
-  }
+  /* No further overrides needed */
 }
-
