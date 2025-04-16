@@ -141,7 +141,7 @@ nav { /* Dark background for contrast */
     overflow: hidden;
     border-right: 2px solid #333;
     width: 0;
-    animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    animation: none;
   }
 
   @keyframes typing {
@@ -339,10 +339,6 @@ button:focus {
   color: #0077cc;
 }
 
-/* Prevent scroll when menu is open */
-body.menu-open {
-  overflow: hidden;
-}
 
 /* =========================
    SECTIONS

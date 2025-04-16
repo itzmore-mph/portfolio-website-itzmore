@@ -6,20 +6,29 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // ======= HAMBURGER MENU TOGGLE =======
   function toggleMenu() {
-    const menu = document.querySelector('.menu-links');
-    const icon = document.querySelector('.hamburger-icon');
-
-    menu.classList.toggle('open');
-    icon.classList.toggle('open');
-
-    // Lock scroll when menu is open
-    document.body.classList.toggle("menu-open", menu.classList.contains("open"));
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    const body = document.body;
+  
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+  
+    if (menu.classList.contains("open")) {
+      body.classList.add("menu-open");
+    } else {
+      body.classList.remove("menu-open");
+    }
   }
 
-  const hamburgerIcon = document.querySelector(".hamburger-icon");
-  if (hamburgerIcon) {
-    hamburgerIcon.addEventListener("click", toggleMenu);
-  }
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.remove("menu-open");
+  
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+  
+    if (menu) menu.classList.remove("open");
+    if (icon) icon.classList.remove("open");
+  });
 
   // ======= EXPERIENCE TOGGLE DETAILS =======
   window.toggleDetails = function (button) {
@@ -104,4 +113,11 @@ setInterval(rotateTagline, 4000); // Every 4s, with fade timing baked in
       ticking = true;
     }
   });
+});
+
+
+window.addEventListener("load", () => {
+  document.body.classList.remove("menu-open");
+  document.querySelector(".menu-links")?.classList.remove("open");
+  document.querySelector(".hamburger-icon")?.classList.remove("open");
 });

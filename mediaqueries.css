@@ -26,9 +26,32 @@
     align-items: center;
   }
 
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .section-heading h1 {
+    font-size: 2rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.1rem;
+  }
+  
   .section__pic-container {
     height: 250px;
     width: 250px;
+  }
+
+  .arrow-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .more-projects-coming {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 
   .section__text {
@@ -72,6 +95,17 @@
     max-height: 200px;
   }
 
+  .project-description,
+  .project-card-full {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .project-tech ul {
+    padding-left: 1rem;
+  }
+
   .tagline {
     font-size: 1rem;
     padding: 0 0.75rem;
@@ -88,14 +122,29 @@
     padding: 2rem 1rem;
   }
 
-  .contact-info-upper-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
   .contact-info-item {
     justify-content: center;
+  }
+
+
+  .contact-info-upper-container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .contact-info-container {
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .contact-icon {
+    height: 2rem;
+  }
+
+  .email-icon {
+    height: 2rem;
   }
 
   footer .nav-links {
