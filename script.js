@@ -1,39 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
+  // ======= INITIAL SCROLL UNLOCK =======
+  document.body.classList.remove("menu-open");
+  document.querySelector(".menu-links")?.classList.remove("open");
+  document.querySelector(".hamburger-icon")?.classList.remove("open");
+
   // ======= TAGLINE EFFECT =======
   document.querySelector('.logo-typewriter').textContent = "Analyzing the World, One Byte at a Time";
 
-  
   // ======= HAMBURGER MENU TOGGLE =======
-  function toggleMenu() {
+  window.toggleMenu = function () {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
     const body = document.body;
-  
+
     menu.classList.toggle("open");
     icon.classList.toggle("open");
-  
+
     if (menu.classList.contains("open")) {
       body.classList.add("menu-open");
     } else {
       body.classList.remove("menu-open");
     }
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.remove("menu-open");
-  
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-  
-    if (menu) menu.classList.remove("open");
-    if (icon) icon.classList.remove("open");
-  });
+  };
 
   // ======= EXPERIENCE TOGGLE DETAILS =======
   window.toggleDetails = function (button) {
     if (!button) return;
-
     const details = button.nextElementSibling;
     if (!details) return;
 
@@ -52,36 +44,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-// ======= ROTATING TAGLINE (SMOOTH FADE) =======
-const taglines = [
-  "The Beautiful Game, Explained with Data.",
-  "Where Code Meets the Game.",
-  "Powered by Python. Inspired by Football."
-];
-let index = 0;
-const taglineElement = document.getElementById("tagline");
+  // ======= ROTATING TAGLINE (SMOOTH FADE) =======
+  const taglines = [
+    "The Beautiful Game, Explained with Data.",
+    "Where Code Meets the Game.",
+    "Powered by Python. Inspired by Football."
+  ];
+  let index = 0;
+  const taglineElement = document.getElementById("tagline");
 
-function rotateTagline() {
-  if (!taglineElement) return;
+  function rotateTagline() {
+    if (!taglineElement) return;
 
-  // Step 1: Fade out
-  taglineElement.classList.add("fade-out");
+    taglineElement.classList.add("fade-out");
 
-  // Step 2: Wait for fade-out to finish, then change text and fade back in
-  setTimeout(() => {
-    taglineElement.textContent = taglines[index];
-    taglineElement.classList.remove("fade-out");
-    index = (index + 1) % taglines.length;
-  }, 500); // 500ms matches the CSS transition duration
-}
+    setTimeout(() => {
+      taglineElement.textContent = taglines[index];
+      taglineElement.classList.remove("fade-out");
+      index = (index + 1) % taglines.length;
+    }, 500);
+  }
 
-// Initial call and interval
-rotateTagline();
-setInterval(rotateTagline, 4000); // Every 4s, with fade timing baked in
+  rotateTagline();
+  setInterval(rotateTagline, 4000);
 
   // ======= NAVBAR SCROLL BEHAVIOR =======
   let lastScrollTop = 0;
   const navBar = document.querySelector("nav");
+  const hamburgerIcon = document.querySelector(".hamburger-icon");
 
   function setNavStyles(opacity, translateY, pointer) {
     [navBar, hamburgerIcon].forEach(el => {
@@ -113,11 +103,4 @@ setInterval(rotateTagline, 4000); // Every 4s, with fade timing baked in
       ticking = true;
     }
   });
-});
-
-
-window.addEventListener("load", () => {
-  document.body.classList.remove("menu-open");
-  document.querySelector(".menu-links")?.classList.remove("open");
-  document.querySelector(".hamburger-icon")?.classList.remove("open");
 });
