@@ -1,30 +1,38 @@
+/* mediaqueries.css */
+
 /* ===========================
    RESPONSIVE STYLES
 =========================== */
 
 /* ===== Mobile & Small Tablets (<=768px) ===== */
 @media screen and (max-width: 768px) {
-  /* Hide desktop nav, show hamburger menu */
-  #desktop-nav { display: none; }
-  #hamburger-nav { display: block; margin: 0; padding: 0; }
-
-  /* Ensure hamburger icon is on top */
-  .hamburger-icon {
-    right: 1.5rem;
-    top: 1.25rem;
-    padding: 0.75rem;
-    background-color: white;
-    border-radius: 8px;
-    z-index: 2000;
+  /* Desktop‑Nav ausblenden, Hamburger‑Nav zeigen */
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: block;
+  }
+  .full-logo {
+    display: none;
+  }
+  .short-logo {
+    display: inline;
   }
 
-  /* Global column‑layout for main flex containers */
+  /* Profil‑Sektion zentrieren */
+  #profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Flex‑Wrappers auf Spalten umstellen */
   .profile-container,
   .about-wrapper,
   .experience-grid,
   .skills-wrapper,
   .about-highlight-boxes {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-md);
@@ -33,7 +41,6 @@
 
   /* Buttons full‑width */
   .btn-container {
-    display: flex;
     flex-direction: column;
     gap: var(--space-sm);
     width: 100%;
@@ -43,34 +50,33 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Section padding and margins */
+  /* Sektionen enger */
   section {
     padding: 2rem 1rem;
   }
   .section-container {
-    margin: 0 1rem;
+    margin: 0;
   }
 
-  /* Profile image sizing */
+  /* Profilbild anpassen */
   .section__pic-container {
     height: 250px;
     width: 250px;
   }
 
-  /* Headings & text adjustments */
+  /* Texte kleiner */
   .section-heading h1,
   .title {
     font-size: 2rem;
   }
   .section__text {
     padding: 0 1rem;
-    text-align: center;
   }
   .section__text__p2 {
     font-size: 1.1rem;
   }
 
-  /* Tagline & “More to come” tweaks */
+  /* Tagline & More */
   .tagline {
     font-size: 1rem;
     padding: 0 0.75rem;
@@ -82,14 +88,14 @@
     margin-bottom: 2rem;
   }
 
-  /* Prevent overflow of text */
+  /* Keine Überläufe */
   h3,
   p {
     word-break: break-word;
     overflow-wrap: break-word;
   }
 
-  /* Experience cards, skills, projects, contact */
+  /* Karten, Skills, Projekte */
   .experience-card,
   .skills-box,
   .project-card-full,
@@ -112,10 +118,9 @@
     padding-left: 1rem;
   }
 
-  /* Contact section */
+  /* Kontakt kompakt */
   #contact {
     padding: 2rem 1rem;
-    height: auto;
   }
   .contact-info-upper-container {
     flex-direction: column;
@@ -124,7 +129,6 @@
     padding: 1.5rem;
   }
   .contact-info-container {
-    justify-content: center;
     font-size: 1rem;
   }
   .contact-link {
@@ -135,13 +139,13 @@
     height: 2rem;
   }
 
-  /* Footer links stacked */
+  /* Footer links vertikal */
   footer .nav-links {
     flex-direction: column;
     gap: 1rem;
   }
 
-  /* Arrow spacing */
+  /* Pfeil‑Spacing */
   .arrow-wrapper {
     margin: 1rem 0 2rem;
   }
@@ -150,31 +154,42 @@
 /* ===== Very Small Screens (<=480px) ===== */
 @media screen and (max-width: 480px) {
   .hamburger-icon {
-    right: 1.5rem;
     top: 1rem;
-    padding: 0.75rem;
   }
   nav {
     padding-right: 3rem;
   }
-  /* Hier kannst du bei Bedarf weitere Feintuning-Regeln für ganz kleine Geräte ergänzen */
+}
+
+/* ===== Sticky Navbar & Profile auf Desktop (>=769px) ===== */
+@media screen and (min-width: 769px) {
+  /* Sticky Nav */
+  #desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  main {
+    margin-top: 10vh;
+  }
+  #hamburger-nav {
+    display: none;
+  }
+
+  /* Profile full‑width mit gleichem Padding */
+  #profile {
+    width: 100%;
+    padding: var(--space-lg) 2.5rem;
+    margin: 0;
+    max-width: none;
+  }
 }
 
 /* ===== Tablets & Small Laptops (769px–1024px) ===== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* Hide desktop nav, show hamburger menu */
-  #desktop-nav { display: none; }
-  #hamburger-nav { display: block; margin: 0; padding: 0; }
-
-  .hamburger-icon {
-    right: 1.5rem;
-    top: 1.25rem;
-    padding: 0.75rem;
-    background-color: white;
-    border-radius: 8px;
-    z-index: 2000;
-  }
-
   .logo {
     font-size: 1.2rem;
     max-width: 60%;
@@ -182,7 +197,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   .section__pic-container {
     height: 300px;
     width: 300px;
@@ -196,7 +210,6 @@
   }
   .experience-grid {
     gap: 1.5rem;
-    justify-content: center;
   }
   .experience-card {
     flex: 1 1 90%;
@@ -220,6 +233,12 @@
 
 /* ===== Large Screens (>=1025px) ===== */
 @media screen and (min-width: 1025px) {
+  /* Profile wieder in Container‑Breite */
+  #profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg) 0;
+  }
   .section__text {
     padding: 0 3rem;
   }
@@ -230,3 +249,4 @@
     gap: 2rem;
   }
 }
+
