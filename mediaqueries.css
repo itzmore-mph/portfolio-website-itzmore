@@ -4,195 +4,175 @@
 
 /* ===== Mobile & Small Tablets (<=768px) ===== */
 @media screen and (max-width: 768px) {
-  /* Hide desktop nav */
-  #desktop-nav {
-    display: none;
-  }
+  /* Hide desktop nav, show hamburger menu */
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: block; margin: 0; padding: 0; }
 
-  /* Show mobile nav */
-  #hamburger-nav {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
+  /* Ensure hamburger icon is on top */
   .hamburger-icon {
     right: 1.5rem;
     top: 1.25rem;
     padding: 0.75rem;
-    z-index: 9999;
-    background-color: white; /* optional: for contrast */
+    background-color: white;
     border-radius: 8px;
+    z-index: 2000;
   }
 
-  /* Specific tweak for very small screens (e.g. iPhone SE/13 mini) */
-  @media screen and (max-width: 480px) {
-    .hamburger-icon {
-      right: 1.5rem;
-      top: 1rem;
-      padding: 0.75rem;
-    }
-
-    nav {
-      padding-right: 3rem;
-    }
-  }
-
-  /* Layout Adjustments */
-  .section-container {
-    margin: 0 1rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .section__pic-container {
-    height: 250px;
-    width: 250px;
-  }
-
-  .section-heading h1,
-  .title {
-    font-size: 2rem;
-  }
-
-  .section__text {
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  .section__text__p2 {
-    font-size: 1.1rem;
-  }
-
+  /* Global column‑layout for main flex containers */
   .profile-container,
   .about-wrapper,
-  .skills-columns,
   .experience-grid,
+  .skills-wrapper,
   .about-highlight-boxes {
-    flex-direction: column !important;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .btn-container,
-  .profile-container {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: var(--space-md);
     width: 100%;
   }
 
+  /* Buttons full‑width */
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+  }
   .btn {
     width: 90%;
     margin-bottom: 0.5rem;
   }
 
-  .arrow-wrapper {
-    margin: 1rem 0 2rem;
+  /* Section padding and margins */
+  section {
+    padding: 2rem 1rem;
+  }
+  .section-container {
+    margin: 0 1rem;
   }
 
+  /* Profile image sizing */
+  .section__pic-container {
+    height: 250px;
+    width: 250px;
+  }
+
+  /* Headings & text adjustments */
+  .section-heading h1,
+  .title {
+    font-size: 2rem;
+  }
+  .section__text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+  .section__text__p2 {
+    font-size: 1.1rem;
+  }
+
+  /* Tagline & “More to come” tweaks */
   .tagline {
     font-size: 1rem;
     padding: 0 0.75rem;
     margin: 1rem 0 1.5rem;
   }
-
   .more-projects-coming {
     font-size: 1.25rem;
     padding: 0 1rem;
     margin-bottom: 2rem;
   }
 
+  /* Prevent overflow of text */
   h3,
   p {
     word-break: break-word;
     overflow-wrap: break-word;
   }
 
+  /* Experience cards, skills, projects, contact */
   .experience-card,
   .skills-box,
   .project-card-full,
   .project-description {
     padding: 1.5rem 1rem;
+    width: 100%;
   }
-
   .experience-card h3 {
     font-size: 1rem;
   }
-
   .project-img {
     max-height: 200px;
   }
-
   .project-description,
   .project-card-full {
     font-size: 0.95rem;
     line-height: 1.6;
   }
-
   .project-tech ul {
     padding-left: 1rem;
   }
 
+  /* Contact section */
   #contact {
     padding: 2rem 1rem;
     height: auto;
   }
-
   .contact-info-upper-container {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
     padding: 1.5rem;
   }
-
   .contact-info-container {
     justify-content: center;
     font-size: 1rem;
   }
-
   .contact-link {
     padding: 0.5rem;
   }
-
   .contact-icon,
   .email-icon {
     height: 2rem;
   }
 
+  /* Footer links stacked */
   footer .nav-links {
     flex-direction: column;
     gap: 1rem;
   }
+
+  /* Arrow spacing */
+  .arrow-wrapper {
+    margin: 1rem 0 2rem;
+  }
+}
+
+/* ===== Very Small Screens (<=480px) ===== */
+@media screen and (max-width: 480px) {
+  .hamburger-icon {
+    right: 1.5rem;
+    top: 1rem;
+    padding: 0.75rem;
+  }
+  nav {
+    padding-right: 3rem;
+  }
+  /* Hier kannst du bei Bedarf weitere Feintuning-Regeln für ganz kleine Geräte ergänzen */
 }
 
 /* ===== Tablets & Small Laptops (769px–1024px) ===== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  
-  #desktop-nav {
-    display: none;
-  }
-
-  #hamburger-nav {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
+  /* Hide desktop nav, show hamburger menu */
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: block; margin: 0; padding: 0; }
 
   .hamburger-icon {
     right: 1.5rem;
     top: 1.25rem;
     padding: 0.75rem;
-    z-index: 9999;
     background-color: white;
     border-radius: 8px;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
+    z-index: 2000;
   }
 
   .logo {
@@ -207,40 +187,32 @@
     height: 300px;
     width: 300px;
   }
-
   .section__text {
     padding: 0 2rem;
   }
-
   .about-wrapper {
     flex-direction: column;
     align-items: center;
   }
-
   .experience-grid {
     gap: 1.5rem;
     justify-content: center;
   }
-
   .experience-card {
     flex: 1 1 90%;
   }
-
   .skills-columns {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .btn-container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .btn {
     min-width: 40%;
     margin-bottom: 1rem;
   }
-
   .project-img {
     max-height: 300px;
   }
@@ -251,11 +223,9 @@
   .section__text {
     padding: 0 3rem;
   }
-
   .skills-columns {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .experience-grid {
     gap: 2rem;
   }
