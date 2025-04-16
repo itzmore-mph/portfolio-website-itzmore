@@ -7,17 +7,35 @@
     <title>Moritz Philipp Haaf | Data Analyst | Portfolio</title>
     <!-- Keywords -->
     <meta name="keywords" content="Data Analyst, Football Analytics, Sports Analytics, Python, Streamlit, Portfolio">
+    <meta name="description" content="Football analytics portfolio by Moritz Philipp Haaf. Data projects, dashboards, and machine learning for the beautiful game.">
     <meta name="author" content="Moritz Philipp Haaf" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   
     <!-- Favicon -->
-    <link rel="icon" href="favicon_from_blackbird.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon_from_blackbird.ico" type="image/x-icon" />
+    <!-- Open Graph Meta Tags -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Moritz Philipp Haaf",
+        "url": "https://itzmore.dev",
+        "sameAs": [
+          "https://www.linkedin.com/in/moritz-philipp-haaf/",
+          "https://github.com/itzmore-mph"
+        ],
+        "jobTitle": "Data Analyst",
+        "knowsAbout": ["Football Analytics", "Python", "Streamlit", "Dashboarding"]
+      }
+      </script>      
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Analyzing the World, One Byte at a Time</div>
+    <main>
+    <nav id="desktop-nav" aria-label="Main Navigation">
+      <div class="logo"><span class="full-logo"><h1 class="logo-typewriter">Analyzing the World, One Byte at a Time</h1></span><span class="short-logo"><h1 class="logo-typewriter"></h1>Analyzing the World</h1></span></div>
+
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -47,36 +65,29 @@
     <section id="profile">
       <div class="profile-container">
         <div class="section__pic-container">
-          <img src="./assets/profile-pic.png" alt="Moritz profile picture" />
+          <img src="./assets/profile-pic.png" alt="Portrait of Moritz Philipp Haaf" />
         </div>
         <div class="section__text">
           <p class="section__text__p1">Hello, I'm</p>
           <h1 class="title">Moritz Philipp Haaf</h1>
           <p class="section__text__p2">Data Analyst focused on Data & Football Analytics</p>
           <!-- Tagline Container -->
-          <p id="tagline" class="tagline">The Beautiful Game, Explained with Data.</p>
+          <p id="tagline" class="tagline" role="status" aria-live="polite">The Beautiful Game, Explained with Data.</p>
           <div class="btn-container">
             <button class="btn btn-color-2" onclick="window.open('./assets/CV Moritz Philipp Haaf.pdf', '_blank')">Download CV</button>
             <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
           </div>
           <div id="socials-container">
             <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-                 onclick="location.href='https://www.linkedin.com/in/moritz-philipp-haaf/'" />
+                onclick="location.href='https://www.linkedin.com/in/moritz-philipp-haaf/'" />
             <img src="./assets/github.png" alt="My Github profile" class="icon"
-                 onclick="location.href='https://github.com/itzmore-mph'" />
+                onclick="location.href='https://github.com/itzmore-mph'" />
           </div>
         </div>
       </div>
-    
-      <!-- Arrow BELOW the flex container 
       <div class="arrow-wrapper">
-        <img
-          src="./assets/arrow.png"
-          alt="Scroll down"
-          class="section-arrow"
-          onclick="location.href='#about'"
-        />
-      </div>-->
+        <img src="./assets/arrow.png" alt="Scroll down" class="section-arrow" onclick="location.href='#about'" />
+      </div>
     </section>
     
       <section id="about" class="section">
@@ -86,14 +97,14 @@
         </div>
         <div class="about-wrapper">
           <div class="about-left">
-            <img src="./assets/profile-pic-2.png" alt="Profile picture" class="about-img" />
+            <img src="./assets/profile-pic-2.png" alt="Portrait of Moritz Philipp Haaf" class="about-img" />
           </div>
           <div class="about-right">
             <div class="about-highlight-boxes">
               <div class="details-container">
                 <img src="./assets/experience.png" alt="Experience Icon" class="icon" />
                 <h3>Experience</h3>
-                <p>5+ years<br>Data Analytics</p>
+                <p>5+ years<br>in Data & Analytics</p>
               </div>
               <div class="details-container">
                 <img src="./assets/education.png" alt="Education Icon" class="icon" />
@@ -235,7 +246,7 @@
     <section id="skills">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Skill Set</h1>
-    
+      <div class="skills-wrapper">
       <div class="skills-box">
         <h3>Core Competencies</h3>
         <div class="skills-columns">
@@ -295,6 +306,7 @@
           <div class="skill-item"><img src="./assets/checkmark.png" /><strong>Git, GitHub</strong><span>Intermediate</span></div>
         </div>
       </div>
+    </div>
       <div class="arrow-wrapper">
         <img
           src="./assets/arrow.png"
@@ -366,7 +378,7 @@
       </div>
       
       <div class="more-projects-coming">
-        <p>More to come...</p>
+        <p>More to come </p>
       </div>
       <div class="arrow-wrapper">
         <img
@@ -382,20 +394,16 @@
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:moritz_haaf@outlook.com">moritz_haaf@outlook.com</a></p>
+          <a href="mailto:moritz_haaf@outlook.com" class="contact-link">
+            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+            <span>moritz_haaf@outlook.com</span>
+          </a>
         </div>
         <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/moritz-philipp-haaf/">LinkedIn</a></p>
+          <a href="https://www.linkedin.com/in/moritz-philipp-haaf/" class="contact-link" target="_blank" rel="noopener">
+            <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
     </section>
@@ -416,5 +424,6 @@
       <p>Copyright &#169; 2025 Moritz Philipp Haaf. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+  </main>
   </body>
 </html>

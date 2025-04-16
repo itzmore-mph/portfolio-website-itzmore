@@ -2,13 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Football analytics portfolio by Moritz Philipp Haaf. Data projects, dashboards, and machine learning for the beautiful game.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "url": "https://itzmore.dev/privacy.html",
+      "about": {
+        "@type": "Person",
+        "name": "Moritz Philipp Haaf"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Moritz Philipp Haaf",
+        "url": "https://itzmore.dev"
+      }
+    }
+    </script>    
   <title>Privacy Policy</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       color: #333;
       margin: 0;
       padding: 0;
@@ -63,6 +82,10 @@
       border-radius: 8px;
     }
 
+    .language-toggle button.active {
+      background-color: #e0e0e0;
+      pointer-events: none;
+    }
     .language-toggle button:hover {
       background-color: #f1f1f1;
     }
@@ -85,11 +108,11 @@
 <body>
   <section id="privacy">
     <div class="language-toggle">
-      <button onclick="toggleLanguage('en')">English</button>
-      <button onclick="toggleLanguage('de')">Deutsch</button>
+      <button onclick="toggleLanguage('en')" aria-label="Show Privacy Policy in English" aria-pressed="true">English</button>
+      <button onclick="toggleLanguage('de')" aria-label="Show Privacy Policy in German" aria-pressed="false">Deutsch</button>
     </div>
 
-    <div id="privacy-en" class="language-content active">
+    <div id="privacy-en" class="language-content active" lang="en">
       <h1>Privacy Policy</h1>
       <p><strong>Last Updated:</strong> April 2025</p>
 
@@ -116,7 +139,7 @@
       <a class="back-link" href="index.html">← Back to Portfolio</a>
     </div>
 
-    <div id="privacy-de" class="language-content">
+    <div id="privacy-de" class="language-content" lang="de">
       <h1>Datenschutzerklärung</h1>
       <p><strong>Stand:</strong> April 2025</p>
 
@@ -145,12 +168,18 @@
   </section>
 
   <script>
-    function toggleLanguage(lang) {
-      document.querySelectorAll('.language-content').forEach(el => {
-        el.classList.remove('active');
-      });
-      document.getElementById(`privacy-${lang}`).classList.add('active');
-    }
+  function toggleLanguage(lang) {
+  document.querySelectorAll('.language-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.language-toggle button').forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed', 'false');
+  });
+
+  document.getElementById(`privacy-${lang}`).classList.add('active');
+  const activeBtn = document.querySelector(`.language-toggle button[onclick*="${lang}"]`);
+  activeBtn.classList.add('active');
+  activeBtn.setAttribute('aria-pressed', 'true');
+}
   </script>
 </body>
 </html>
