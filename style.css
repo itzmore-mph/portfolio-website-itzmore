@@ -37,7 +37,6 @@ html {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 img {
@@ -53,7 +52,11 @@ a {
 
 a:hover {
   color: grey;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
 }
+
 
 p {
   color: rgb(85, 85, 85);
@@ -197,19 +200,6 @@ nav { /* Dark background for contrast */
   font-weight: 600;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  text-decoration-color: white;
-}
-
-a:hover {
-  color: grey;
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
-}
-
 a:focus,
 button:focus {
   outline-offset: 4px;
@@ -237,10 +227,16 @@ button:focus {
   height: 22px;
   cursor: pointer;
   position: fixed;
-  top: 1.5rem;
   right: 1.5rem;
+  top: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
   z-index: 1002;
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger-icon:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .hamburger-icon span {
@@ -420,7 +416,6 @@ section {
 ========================= */
 
 #profile {
-    padding: calc(10vh + 5rem) 10rem 10rem;
     text-align: center;
     height: auto;
   }
@@ -854,7 +849,6 @@ PROJECTS SECTION
 #projects {
   position: relative;
   max-width: 1300px;margin: 0 auto;
-  margin: 0 auto;
   padding: 2rem 1rem 4rem;
 }
 
@@ -862,7 +856,6 @@ PROJECTS SECTION
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   background: white;
-  padding: auto;
   margin: 5 auto 10rem;
 }
 
