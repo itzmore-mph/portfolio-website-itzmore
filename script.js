@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ======= INITIAL SCROLL UNLOCK =======
-  /*document.body.classList.remove("menu-open");
-  document.querySelector(".menu-links")?.classList.remove("open");
-  document.querySelector(".hamburger-icon")?.classList.remove("open");*/
-
   // ======= TAGLINE EFFECT =======
-  document.querySelector('.logo-typewriter').textContent = "Analyzing the World, One Byte at a Time";
+  document.querySelector('.logo-typewriter').textContent =
+    "Analyzing the World, One Byte at a Time";
 
   // ======= HAMBURGER MENU TOGGLE =======
   window.toggleMenu = function () {
@@ -34,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.textContent = isHidden ? "Hide Details" : "Show Details";
   };
 
-  // ======= LANGUAGE TOGGLE (e.g. Impressum Page) =======
+  // ======= LANGUAGE TOGGLE (Impressum Page) =======
   window.toggleLanguage = function (lang) {
     const en = document.getElementById("imprint-en");
     const de = document.getElementById("imprint-de");
@@ -55,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function rotateTagline() {
     if (!taglineElement) return;
-
     taglineElement.classList.add("fade-out");
-
     setTimeout(() => {
       taglineElement.textContent = taglines[index];
       taglineElement.classList.remove("fade-out");
@@ -69,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(rotateTagline, 4000);
 
   // ======= NAVBAR SCROLL BEHAVIOR =======
-  /*let lastScrollTop = 0;
+  let lastScrollTop = 0;
   const navBar = document.querySelector("nav");
   const hamburgerIcon = document.querySelector(".hamburger-icon");
 
@@ -103,4 +97,5 @@ document.addEventListener("DOMContentLoaded", function () {
       ticking = true;
     }
   });
-});*/
+
+});
