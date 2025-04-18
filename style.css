@@ -293,36 +293,28 @@ button:focus {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
-
-  /* flex setup */
-  display: none;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 1.5rem;
-  justify-content: center;
-  align-items: center;
-
-  /* full‑screen white box */
-  background-color: white;
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100vh;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
   z-index: 999;
-
-  /* ——— HIDE HERE ——— */
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* When you toggle the menu open… */
-.menu‑links.open {
+.menu-links.open {
+  display: flex;
   transform: translateX(0);
   opacity: 1;
-  display: flex;
 }
-
 
 .menu-links.open li:nth-child(1) {
   animation-delay: 0.1s;

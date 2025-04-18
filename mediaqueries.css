@@ -1,45 +1,26 @@
-/* ===========================
-   MEDIA QUERIES (RESPONSIVE)
-   =========================== */
-
-/* -------------------------------------------------
-   Mobile & Tablet (up to 1024px): show hamburger
-   ------------------------------------------------- */
+/* ========================================================
+   MOBILE & TABLET NAV SWAP + COMMON MOBILE LAYOUT (≤1024px)
+   — hide desktop nav, show hamburger, plus common spacing
+   ======================================================== */
    @media screen and (max-width: 1024px) {
-
-    /* NAVIGATION SWITCH */
-    #desktop-nav {
-      display: none !important;
-    }
-    #hamburger-nav,
+    /* NAVIGATION */
+    #desktop-nav { display: none !important; }
+    #hamburger-nav { display: block !important; position: relative; z-index: 1001; }
     .hamburger-icon {
-      display: block !important;
-    }
-    /* ensure the icon sits inside its container */
-    #hamburger-nav {
-      position: relative;
-      z-index: 1001;
-    }
-    .hamburger-icon {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.75rem;
-      z-index: 1002;
+      display: flex !important;
+      position: absolute !important;
+      top: 1rem !important;
+      right: 1rem !important;
+      padding: 0.75rem !important;
+      z-index: 1002 !important;
     }
   
     /* GLOBAL SECTION PADDING */
-    section {
-      padding: 2rem 1rem;
-    }
+    section { padding: 2rem 1rem; }
   
-    /* CONTACT↔FOOTER SPACING */
-    #contact {
-      margin-bottom: 3rem;
-    }
-    footer {
-      margin-top: 3rem;
-    }
+    /* CONTACT ↔ FOOTER SPACING */
+    #contact { margin-bottom: 3rem; }
+    footer   { margin-top: 3rem; }
   
     /* FOOTER LINKS → 2‑COL GRID */
     footer .nav-links {
@@ -53,166 +34,49 @@
     footer .nav-links li:last-child {
       grid-column: 1 / -1; /* Privacy Policy full‑width */
     }
-    footer p {
-      margin-top: 0.5rem;
-    }
+    footer p { margin-top: 0.5rem; }
   }
   
-  /* -------------------------------------------------
-     Landscape phones / small tablets (481–768px)
-     ------------------------------------------------- */
+  /* ========================================================
+     LANDSCAPE PHONES / SMALL TABLETS (481–768px)
+     ======================================================== */
   @media screen and (min-width: 481px) and (max-width: 768px) {
-  
     .hamburger-icon {
       top: 1.25rem;
       right: 1.5rem;
     }
-  
     .section__pic-container {
-      width: 250px;
-      height: 250px;
-      margin: 0 auto;
+      width: 250px; height: 250px; margin: 0 auto;
     }
-  
     .section__text {
-      padding: 0 1rem;
-      text-align: center;
+      padding: 0 1rem; text-align: center;
     }
-  
-    /* keep the same 2‑col grid on slightly larger phones */
-    footer .nav-links {
-      gap: 1rem;
-    }
+    /* keep same footer grid but slightly wider gaps */
+    footer .nav-links { gap: 1rem; }
   }
-  
-  /* -------------------------------------------------
-     Portrait tablets (769–1024px)
-     ------------------------------------------------- */
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-  
-    /* hide desktop nav & show hamburger */
-    #desktop-nav {
-      display: none !important;
-    }
-    #hamburger-nav,
-    .hamburger-icon {
-      display: block !important;
-    }
-  
-    .hamburger-icon {
-      top: 1.25rem;
-      right: 1.5rem;
-    }
-  
-    .section__pic-container {
-      width: 300px;
-      height: 300px;
-      margin: 0 auto;
-    }
-  
-    .section__text {
-      padding: 0 2rem;
-    }
-  
-    /* optional extra padding on your copyright */
-    .copy {
-      padding: 2rem;
-      padding-top: 2px;
-    }
-  
-    /* stack these vertically */
-    .about-wrapper,
-    .experience-grid,
-    .btn-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .skills-columns {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .btn {
-      min-width: 40%;
-      margin-bottom: 1rem;
-    }
-  }
-  
-  /* -------------------------------------------------
-     Small desktops (1025–1199px)
-     ------------------------------------------------- */
+    
+  /* ========================================================
+     SMALL DESKTOPS (1025–1199px)
+     ======================================================== */
   @media screen and (min-width: 1025px) and (max-width: 1199px) {
-    .section__text {
-      padding: 0 3rem;
-    }
-    .skills-columns {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .experience-grid {
-      gap: 2rem;
-    }
+    .section__text { padding: 0 3rem; }
+    .skills-columns { grid-template-columns: repeat(2, 1fr); }
+    .experience-grid { gap: 2rem; }
   }
   
-  /* -------------------------------------------------
-     Large desktops (1200px and up)
-     ------------------------------------------------- */
+  /* ========================================================
+     LARGE DESKTOPS (≥1200px)
+     ======================================================== */
   @media screen and (min-width: 1200px) {
-    .section__pic-container {
-      width: 400px;
-      height: 400px;
-    }
-    .section__text {
-      padding: 0 5rem;
-    }
+    .section__pic-container { width: 400px; height: 400px; }
+    .section__text            { padding: 0 5rem; }
     .experience-grid,
-    .skills-columns {
-      gap: 2rem;
-    }
-    .skills-columns {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    #hamburger-nav {
-      display: block !important;
-    }
-    .hamburger-icon {
-      display: flex !important;
-      position: absolute !important;
-      top: 1rem !important;
-      right: 1rem !important;
-      z-index: 1002 !important;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    /* hide your normal nav */
-    #desktop-nav {
-      display: none !important;
-    }
-  
-    /* show the hamburger wrapper */
-    #hamburger-nav {
-      display: block !important;
-      position: relative; /* so the icon inside can use absolute positioning */
-      z-index: 1001;
-    }
-  
-    /* show the three‑bar icon */
-    .hamburger-icon {
-      display: flex !important;
-      position: absolute !important;
-      top: 1rem !important;
-      right: 1rem !important;
-      padding: 0.75rem !important;
-      z-index: 1002 !important;
-    }
+    .skills-columns           { gap: 2rem; }
+    .skills-columns           { grid-template-columns: repeat(3, 1fr); }
   }
   
   /* ==========================================================================
-     HIDE/SHOW THE OVERLAY MENU (applies at all sizes)
-     — keep this *outside* any media query
+     HIDE / SHOW THE OVERLAY MENU (applies at all sizes)
      ========================================================================== */
   /* hidden by default */
   .menu-links {
@@ -227,11 +91,10 @@
     background: white;
     z-index: 999;
   
-    /* for your slide‑in animation */
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    
+  
     /* flex layout when shown */
     flex-direction: column;
     justify-content: center;
@@ -240,7 +103,7 @@
     font-size: 1.5rem;
   }
   
-  /* when you toggle it open… */
+  /* shown when you click the hamburger */
   .menu-links.open {
     display: flex;
     transform: translateX(0);
