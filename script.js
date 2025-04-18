@@ -1,99 +1,150 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // ======= TAGLINE EFFECT =======
-  document.querySelector('.logo-typewriter').textContent =
-    "Analyzing the World, One Byte at a Time";
+document.addEventListener("DOMContentLoaded", () => {
+  // —— CACHE ELEMENTS ——  
+  const body           = document.body;
+  const menuLinks      = document.querySelector(".menu-links");
+  const hamburgerIcon  = document.querySelector(".hamburger-icon");
+  const navBar         = document.querySelector("nav");
+  const logoTyper      = document.querySelector(".logo-typewriter");
+  const taglineEl      = document.getElementById("tagline");
+  const backToTopBtn   = document.getElementById("back-to-top");
+  const sectionArrows  = document.querySelectorAll(".section-arrow");
+  const imprintEn      = document.getElementById("imprint-en");
+  const imprintDe      = document.getElementById("imprint-de");
 
-  // ======= HAMBURGER MENU TOGGLE =======
-  window.toggleMenu = function () {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    const body = document.body;
+  // —— CONFIG & STATE ——  
+  const mobileBreakpoint = 600;
+  let lastY    = window.scrollY;
+  let ticking  = false;
 
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-
-    if (menu.classList.contains("open")) {
-      body.classList.add("menu-open");
-    } else {
-      body.classList.remove("menu-open");
-    }
-  };
-
-  // ======= EXPERIENCE TOGGLE DETAILS =======
-  window.toggleDetails = function (button) {
-    if (!button) return;
-    const details = button.nextElementSibling;
-    if (!details) return;
-
-    const isHidden = details.classList.contains("hidden");
-    details.classList.toggle("hidden");
-    button.textContent = isHidden ? "Hide Details" : "Show Details";
-  };
-
-  // ======= LANGUAGE TOGGLE (Impressum Page) =======
-  window.toggleLanguage = function (lang) {
-    const en = document.getElementById("imprint-en");
-    const de = document.getElementById("imprint-de");
-    if (en && de) {
-      en.style.display = lang === "en" ? "block" : "none";
-      de.style.display = lang === "de" ? "block" : "none";
-    }
-  };
-
-  // ======= ROTATING TAGLINE (SMOOTH FADE) =======
-  const taglines = [
-    "The Beautiful Game, Explained with Data.",
-    "Where Code Meets the Game.",
-    "Powered by Python. Inspired by Football."
-  ];
-  let index = 0;
-  const taglineElement = document.getElementById("tagline");
-
-  function rotateTagline() {
-    if (!taglineElement) return;
-    taglineElement.classList.add("fade-out");
+  // —— HELPERS ——  
+  function fade(element, done) {
+    element.classList.add("fade-out");
     setTimeout(() => {
-      taglineElement.textContent = taglines[index];
-      taglineElement.classList.remove("fade-out");
-      index = (index + 1) % taglines.length;
+      done();
+      element.classList.remove("fade-out");
     }, 500);
   }
 
-  rotateTagline();
-  setInterval(rotateTagline, 4000);
-
-  // ======= NAVBAR SCROLL BEHAVIOR =======
-  let lastScrollTop = 0;
-  const desktopNav = document.getElementById("desktop-nav");
-  // we no longer need to touch the hamburger icon here
-  // const hamburgerIcon = document.querySelector(".hamburger-icon");
-
-  function setDesktopStyles(opacity, translateY, pointer) {
-    if (!desktopNav) return;
-    desktopNav.style.opacity       = opacity;
-    desktopNav.style.transform     = `translateY(${translateY})`;
-    desktopNav.style.pointerEvents = pointer;
+  function debounce(fn, delay = 200) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn(...args), delay);
+    };
   }
 
-  let ticking = false;
+  // —— INITIAL SETUP ——  
+  // Reset menu state
+  body.classList.remove("menu-open");
+  menuLinks?.classList.remove("open");
+  hamburgerIcon?.classList.remove("open");
 
+  // Typewriter logo
+  if (logoTyper) {
+    logoTyper.textContent = "Analyzing the World, One Byte at a Time";
+  }
+
+  // Rotating taglines
+  (function startTaglineRotation() {
+    const texts = [
+      "The Beautiful Game,<br>Explained with Data.",
+      "Powered by Python.<br>Inspired by Football."
+    ];
+    let i = 0;
+
+    // Show the first tagline immediately
+    if (taglineEl) taglineEl.innerHTML = texts[0];
+
+    setInterval(() => {
+      if (!taglineEl) return;
+      fade(taglineEl, () => {
+        i = (i + 1) % texts.length;
+        taglineEl.innerHTML = texts[i];
+      });
+    }, 4000);
+  })();
+
+  // —— SCROLL HANDLING (throttled) ——  
   window.addEventListener("scroll", () => {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const currentScroll   = window.pageYOffset || document.documentElement.scrollTop;
-        const isScrollingDown = currentScroll > lastScrollTop;
-
-        setDesktopStyles(
-          isScrollingDown ? "0" : "1",
-          isScrollingDown ? "-20px" : "0",
-          isScrollingDown ? "none" : "auto"
-        );
-
-        lastScrollTop = Math.max(0, currentScroll);
-        ticking = false;
-      });
+      window.requestAnimationFrame(handleScroll);
       ticking = true;
     }
+  }, { passive: true });
+
+  function handleScroll() {
+    const y = window.scrollY;
+    const isMobile = window.innerWidth <= mobileBreakpoint;
+
+    // 1) Mobile: slide hamburger up/down
+    if (hamburgerIcon) {
+      hamburgerIcon.style.transform = isMobile && y > lastY
+        ? "translateY(-100%)"
+        : "translateY(0)";
+    }
+
+    // 2) Desktop nav & hamburger hide/show
+    [navBar, hamburgerIcon].forEach(el => {
+      if (!el) return;
+      const hiding = y > lastY;
+      el.style.opacity       = hiding ? "0" : "1";
+      el.style.transform     = hiding && !isMobile
+        ? "translateY(-20px)"
+        : "none";
+      el.style.pointerEvents = hiding ? "none" : "auto";
+    });
+
+    // 3) Back‑to‑top visibility
+    backToTopBtn?.classList.toggle("visible", y > 300);
+
+    lastY = y;
+    ticking = false;
+  }
+
+  // —— MENU TOGGLE ——  
+  window.toggleMenu = () => {
+    menuLinks?.classList.toggle("open");
+    hamburgerIcon?.classList.toggle("open");
+    body.classList.toggle(
+      "menu-open",
+      menuLinks?.classList.contains("open")
+    );
+  };
+
+  // —— DETAILS EXPAND/COLLAPSE ——  
+  window.toggleDetails = btn => {
+    const details = btn.nextElementSibling;
+    if (!details) return;
+    const hidden = details.classList.toggle("hidden");
+    btn.textContent = hidden ? "Hide Details" : "Show Details";
+  };
+
+  // —— LANGUAGE SWITCHER ——  
+  window.toggleLanguage = lang => {
+    if (imprintEn && imprintDe) {
+      imprintEn.style.display = lang === "en" ? "block" : "none";
+      imprintDe.style.display = lang === "de" ? "block" : "none";
+    }
+  };
+
+  // —— BACK‑TO‑TOP CLICK ——  
+  backToTopBtn?.addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  );
+
+  // —— SECTION ARROW NAVIGATION ——  
+  sectionArrows.forEach(arrow => {
+    arrow.addEventListener("click", () => {
+      const nextSection = arrow.closest("section")?.nextElementSibling;
+      nextSection?.scrollIntoView({ behavior: "smooth" });
+    });
   });
 
+  // —— OPTIONAL RESIZE HANDLER ——  
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      // e.g. recalc breakpoints or reposition if needed
+    }, 250)
+  );
 });

@@ -1,9 +1,6 @@
 /* =========================
    GLOBAL STYLES & RESET
 ========================= */
-*, *::before, *::after {
-  box-sizing:border-box;
-}
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
@@ -18,7 +15,6 @@
   --space-lg: 3rem;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +22,6 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
 }
 
 body, h1, h2, h3, p {
@@ -34,10 +29,15 @@ body, h1, h2, h3, p {
   padding: 0;
 }
 
+body.menu-open {
+  height: 100vh;
+  overflow: hidden;
+}
+
 html {
-  scroll-snap-type: none;
-  /* If you want anchor‑link jumps to be instant as well: */
-  scroll-behavior: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10vh;
 }
 
 html, body {
@@ -109,6 +109,27 @@ a,
   transition: all 300ms ease;
 }
 
+.icon,
+.contact-icon {
+  transition: transform 0.2s ease-in-out;
+  transform-origin: center center;
+}
+
+.icon:hover,
+.contact-icon:hover {
+  transform: scale(1.2);
+}
+
+.skill-item {
+  transition: transform 0.2s ease-in-out;
+  transform-origin: center center;
+}
+
+.skill-item:hover {
+  transform: scale(1.25);
+}
+
+
 /* =========================
    DESKTOP & NAV
 ========================= */
@@ -116,7 +137,7 @@ a,
 nav { /* Dark background for contrast */
     display: flex;
     height: 10vh; /* slightly less height for tighter alignment */
-    padding: 0 1rem; /* add padding to prevent touching edges */
+    padding: 0 3rem; /* add padding to prevent touching edges */
     justify-content: space-between;
     align-items: center;
     box-shadow: none;
@@ -125,8 +146,14 @@ nav { /* Dark background for contrast */
     background-color: white;
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    border-bottom: 1px solid #eee;
   }
-  
+  #desktop-nav {
+    position: sticky;
+    top: 0;
+    z‑index: 1000;           /* sit above your content */
+    background: white;       /* ensure it covers what’s behind */
+  } 
   /* Logo Styling */
   .logo {
     font-size: 1.5rem;
@@ -213,7 +240,82 @@ button:focus {
   cursor: default;
 }
 
-.menu‑links.open {
+/* =========================
+   HAMBURGER NAVIGATION
+========================= */
+
+#hamburger-nav {
+  display: none;
+  position: relative;
+  z-index: 1001;
+  padding: 1.5rem;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  position:fixed;
+  right: 3.5rem;
+  top: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  z-index: 1002;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger-icon:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-icon span {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Fullscreen overlay nav */
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+  justify-content: flex-start;  
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+  z-index: 999;
+}
+
+.menu-links.open {
   transform: translateX(0%);
   opacity: 1;
 }
@@ -240,83 +342,6 @@ button:focus {
   transform: translateY(0);
 }
 
-/* =========================
-   HAMBURGER NAVIGATION
-========================= */
-
-#hamburger-nav {
-  display: none;
-  position: relative;
-  z-index: 1001;
-}
-
-.hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  position: absolute;
-  right: 1.5rem;
-  top: 1.25rem;
-  justify-content: space-between;
-  padding: 4px 8px;
-  border-radius: 6px;
-  z-index: 1002;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.hamburger-icon:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.hamburger-icon span {
-  height: 3px;
-  width: 100%;
-  background-color: black;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  margin: 0;
-}
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Fullscreen overlay nav — hidden by default */
-.menu-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100vh;
-  background: white;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  font-size: 1.5rem;
-  z-index: 999;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.menu-links.open {
-  display: flex;
-  transform: translateX(0);
-  opacity: 1;
-}
-
 .menu-links.open li:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -340,13 +365,18 @@ button:focus {
   transition: color 0.3s;
 }
 
+.menu-links a:hover {
+  color: #0077cc;
+}
+
+
 /* =========================
    SECTIONS
 ========================= */
 
 section {
   padding: var(--space-lg) var(--space-sm);
-  scroll-snap-align: unset;
+  scroll-snap-align: start;
 }
 
 .section-container {
@@ -377,7 +407,7 @@ section {
 .section-heading h1,
 .title {
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 700;
   color: #222;
   margin-bottom: 1rem;
   text-align: center;
@@ -456,7 +486,7 @@ section {
 }
 
 .section__text p {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .section__text__p1 {
@@ -521,7 +551,7 @@ section {
 }
 
 .btn {
-  font-weight: 400;
+  font-weight: 600;
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
@@ -710,7 +740,7 @@ section {
 
 .experience-card h3 {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   color: #333;
   margin: 0.25rem 0;
 }
@@ -840,6 +870,11 @@ SKILLS SECTION
   .skill-item span {
     font-size: 0.9rem;
     color: #666;
+  }
+
+  .skills-box .skills-columns .skill-item:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
   
 /* =========================
@@ -1026,7 +1061,7 @@ PROJECTS SECTION
   #projects {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 5 1rem;
   }  
 
 
@@ -1042,7 +1077,6 @@ PROJECTS SECTION
   border: 1px solid #ccc;
   border-radius: 10px;
 }
-
 
 /* =========================
 CONTACT SECTION

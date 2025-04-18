@@ -1,123 +1,189 @@
-/* ========================================================
-   MOBILE & TABLET NAV SWAP + COMMON MOBILE LAYOUT (≤1024px)
-   — hide desktop nav, show hamburger, plus common spacing
-   ======================================================== */
-   @media screen and (max-width: 1024px) {
-    /* NAVIGATION */
-    #desktop-nav { 
-      display: none !important; 
-    }
+/* ===========================
+   RESPONSIVE LAYOUT
+   =========================== */
 
-    .hamburger-icon {
-      display: flex !important;
-      position: absolute !important;
-      top: 1rem !important;
-      right: 1rem !important;
-      padding: 0.75rem !important;
-      z-index: 1002 !important;
-    }
+/* 1400px and below */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: auto;
+  }
+}
 
-    #hamburger-nav {
-      display: block !important;
-      position: fixed !important;
-      top: 0; left: 0;
-      width: 100%;
-      background: white;
-      z-index: 1001;
-    }
-  
-    /* GLOBAL SECTION PADDING */
-    section { padding: 2rem 1rem; }
-  
-    /* CONTACT ↔ FOOTER SPACING */
-    #contact { margin-bottom: 3rem; }
-    footer   { margin-top: 3rem; }
-  
-    /* FOOTER LINKS → 2‑COL GRID */
-    footer .nav-links {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-      margin: 0 1rem 1.5rem;
-      padding: 0;
-      list-style: none;
-    }
-    footer .nav-links li:last-child {
-      grid-column: 1 / -1; /* Privacy Policy full‑width */
-    }
-    footer p { margin-top: 0.5rem; }
+/* 1200px and below */
+@media screen and (max-width: 1200px) {
+  /* hide desktop nav */
+  #desktop-nav {
+    display: none !important;
   }
-  
-  /* ========================================================
-     LANDSCAPE PHONES / SMALL TABLETS (481–768px)
-     ======================================================== */
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    .hamburger-icon {
-      top: 1.25rem;
-      right: 1.5rem;
-    }
-    .section__pic-container {
-      width: 250px; height: 250px; margin: 0 auto;
-    }
-    .section__text {
-      padding: 0 1rem; text-align: center;
-    }
-    /* keep same footer grid but slightly wider gaps */
-    footer .nav-links { gap: 1rem; }
-  }
-    
-  /* ========================================================
-     SMALL DESKTOPS (1025–1199px)
-     ======================================================== */
-  @media screen and (min-width: 1025px) and (max-width: 1199px) {
-    .section__text { padding: 0 3rem; }
-    .skills-columns { grid-template-columns: repeat(2, 1fr); }
-    .experience-grid { gap: 2rem; }
-  }
-  
-  /* ========================================================
-     LARGE DESKTOPS (≥1200px)
-     ======================================================== */
-  @media screen and (min-width: 1200px) {
-    .section__pic-container { width: 400px; height: 400px; }
-    .section__text            { padding: 0 5rem; }
-    .experience-grid,
-    .skills-columns           { gap: 2rem; }
-    .skills-columns           { grid-template-columns: repeat(3, 1fr); }
-  }
-  
-  /* ==========================================================================
-     HIDE / SHOW THE OVERLAY MENU (applies at all sizes)
-     ========================================================================== */
-  /* hidden by default */
-  .menu-links {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
+
+  /* show only the mobile bar, 10vh tall */
+  #hamburger-nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    padding: 0 1rem;
     background: white;
-    z-index: 999;
-  
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  
-    /* flex layout when shown */
+    z-index: 1001;
+  }
+
+  /* single flex‐row wrapper: logo (flex:1) + icon (flex:0) */
+  #hamburger-nav .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* logo grows to fill all leftover space */
+  #hamburger-nav .logo {
+    flex: 1 1 auto;
+  }
+
+  /* swap out the long logo for the short one */
+  .full-logo {
+    display: none !important;
+  }
+  .short-logo {
+    display: block !important;
+  }
+
+  /* typewriter lives ONLY in the logo, clipped there */
+  #hamburger-nav .short-logo .logo-typewriter {
+    display: inline-block;
+    width: 0ch;                     /* start zero width */
+    overflow: hidden;               /* hide overflow as it types */
+    text-align: left;               /* left‐align the letters */
+    border-right: 2px solid currentColor;
+    animation:
+      typing-mobile 2s steps(16,end) forwards,
+      blink          0.75s step-end infinite;
+  }
+
+  /* hamburger icon is static in that row, vertically centered */
+  #hamburger-nav .hamburger-icon {
+    flex: 0 0 auto;
+    margin: 0;
+    align-self: center;
+    z-index: 1002; 
+    /* revert any width/height overrides so it keeps 30×22px */
+  }
+
+  /* slide‑in panel sits below the 10vh header & scrolls */
+  .menu-links {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 10vh);
+    background: white;
+    z-index: 1000;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 2rem;
-    font-size: 1.5rem;
+    padding: 1rem 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
   }
-  
-  /* shown when you click the hamburger */
   .menu-links.open {
-    display: flex;
     transform: translateX(0);
     opacity: 1;
   }
-  
+
+  /* restore your other layout tweaks too… */
+  #experience,
+  .experience-details-container { margin-top: 2rem; }
+  #profile,
+  .section-container            { display: block; }
+  .arrow-wrapper                { display: none; }
+  section,
+  .section-container            { height: auto; margin: 0 5%; }
+  .section__pic-container       { width: 275px; height: 275px; margin: 0 auto 2rem; }
+  .about-containers             { margin-top: 0; }
+}
+
+/* keyframes */
+@keyframes typing-mobile {
+  from { width: 0ch; }
+  to   { width: 17ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+/* 600px and below */
+@media screen and (max-width: 600px) {
+  #contact,
+  footer { height: 40vh; }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  .section__text p,
+  .section__text__p1,
+  .section__text__p2,
+  .title,
+  #tagline {
+    text-align: center;
+  }
+  article,
+  .experience-sub-title {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: auto;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    margin: 0 auto;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* ===========================
+   KEYFRAMES (defined once)
+   =========================== */
+@keyframes typing-mobile {
+  from { width: 0ch; }
+  to   { width: 17ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
