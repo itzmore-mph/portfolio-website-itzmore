@@ -64,17 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ======= NAVBAR SCROLL BEHAVIOR =======
   let lastScrollTop = 0;
-  const navBar = document.querySelector("nav");
-  const hamburgerIcon = document.querySelector(".hamburger-icon");
+  const desktopNav = document.getElementById("desktop-nav");
+  // we no longer need to touch the hamburger icon here
+  // const hamburgerIcon = document.querySelector(".hamburger-icon");
 
-  function setNavStyles(opacity, translateY, pointer) {
-    [navBar, hamburgerIcon].forEach(el => {
-      if (el) {
-        el.style.opacity = opacity;
-        el.style.transform = `translateY(${translateY})`;
-        el.style.pointerEvents = pointer;
-      }
-    });
+  function setDesktopStyles(opacity, translateY, pointer) {
+    if (!desktopNav) return;
+    desktopNav.style.opacity       = opacity;
+    desktopNav.style.transform     = `translateY(${translateY})`;
+    desktopNav.style.pointerEvents = pointer;
   }
 
   let ticking = false;
@@ -82,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const currentScroll   = window.pageYOffset || document.documentElement.scrollTop;
         const isScrollingDown = currentScroll > lastScrollTop;
 
-        setNavStyles(
+        setDesktopStyles(
           isScrollingDown ? "0" : "1",
           isScrollingDown ? "-20px" : "0",
           isScrollingDown ? "none" : "auto"

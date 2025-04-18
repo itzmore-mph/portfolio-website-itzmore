@@ -259,8 +259,8 @@ button:focus {
   position: absolute;
   right: 1.5rem;
   top: 1.25rem;
-
-  padding: 0.5rem;
+  justify-content: space-between;
+  padding: 4px 8px;
   border-radius: 6px;
   z-index: 1002;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -276,6 +276,7 @@ button:focus {
   background-color: black;
   border-radius: 2px;
   transition: all 0.3s ease;
+  margin: 0;
 }
 
 .hamburger-icon.open span:first-child {
