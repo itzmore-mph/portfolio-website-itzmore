@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ======= INITIAL SCROLL UNLOCK =======
-  document.body.classList.remove("menu-open");
+  /*document.body.classList.remove("menu-open");
   document.querySelector(".menu-links")?.classList.remove("open");
-  document.querySelector(".hamburger-icon")?.classList.remove("open");
+  document.querySelector(".hamburger-icon")?.classList.remove("open");*/
 
   // ======= TAGLINE EFFECT =======
   document.querySelector('.logo-typewriter').textContent = "Analyzing the World, One Byte at a Time";
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(rotateTagline, 4000);
 
   // ======= NAVBAR SCROLL BEHAVIOR =======
-  let lastScrollTop = 0;
+  /*let lastScrollTop = 0;
   const navBar = document.querySelector("nav");
   const hamburgerIcon = document.querySelector(".hamburger-icon");
 
@@ -103,4 +103,4 @@ document.addEventListener("DOMContentLoaded", function () {
       ticking = true;
     }
   });
-});
+});*/
