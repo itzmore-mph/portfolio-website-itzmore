@@ -148,3 +148,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 250)
   );
 });
+// —— Track Virtual Pageviews or Events —— 
+window.addEventListener('DOMContentLoaded', () => {
+  const downloadBtn = document.getElementById('download-btn');
+  if (!downloadBtn) return;
+
+  downloadBtn.addEventListener('click', () => {
+    // send the custom GA4 event
+    gtag('event', 'download_cv', {
+      method: 'button_click'
+    });
+  });
+});
+
+// —— Consent Opt-in —— 
+(function() {
+  const banner = document.getElementById('cookie-consent-banner');
+  const accepted = localStorage.getItem('cookieConsent');
+
+  // Show banner if no choice yet
+  if (!accepted) banner.style.display = 'block';
+
+  function initGA() {
+    // Your GA snippet, only called after consent
+    const id = 'G-XXXXXXXXXX';
+    const s1 = document.createElement('script');
+    s1.async = true;
+    s1.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+    document.head.appendChild(s1);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', id, { page_path: window.location.pathname });
+  }
+
+  document.getElementById('accept-cookies').onclick = () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.style.display = 'none';
+    initGA();
+  };
+  document.getElementById('decline-cookies').onclick = () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    banner.style.display = 'none';
+  };
+
+  // If already accepted, fire GA immediately
+  if (accepted === 'accepted') {
+    initGA();
+  }
+})();
+
+document.getElementById('manage-cookies').addEventListener('click', e => {
+  e.preventDefault();
+  localStorage.removeItem('cookieConsent');
+  location.reload(); // banner will re‑appear
+});
