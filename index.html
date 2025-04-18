@@ -33,36 +33,7 @@
       }
     </script>
   </head>
-  <body>
-    <div
-    id="cookie-consent-banner"
-    style="
-      display:none;
-      position:fixed;
-      bottom:0;
-      left:0;
-      width:100%;
-      background:#222;
-      color:#fff;
-      padding:1rem;
-      z-index:2000;
-      text-align:center;
-    "
-  >
-    We use cookies to improve your experience and for analytics.
-    <button
-      id="accept-cookies"
-      style="margin-left:1rem; padding:0.5rem 1rem;"
-    >
-      Accept
-    </button>
-    <button
-      id="decline-cookies"
-      style="margin-left:.5rem; padding:0.5rem 1rem;"
-    >
-      Decline
-    </button>
-  </div>  
+  <body> 
     <main>
       <!-- Navigation -->
       <nav id="desktop-nav" aria-label="Main Navigation">
@@ -490,9 +461,27 @@
           <li class="privacy"><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </nav>
+      <a href="#" id="manage-cookies">Manage Cookie Preferences</a>
+      <div class="copy"><p>© 2025 Moritz Philipp Haaf<br>All Rights Reserved</p></div>
     </footer>
-    <a href="#" id="manage-cookies">Manage Cookie Preferences</a>
-    <div class="copy"><p>© 2025 Moritz Philipp Haaf<br>All Rights Reserved</p></div>
+    <div
+    id="cookie-consent-banner"
+    style="
+      display:none;">
+    We use cookies to improve your experience and for analytics.
+    <button
+      id="accept-cookies"
+      style="margin-left:1rem; padding:0.5rem 1rem;"
+    >
+      Accept
+    </button>
+    <button
+      id="decline-cookies"
+      style="margin-left:.5rem; padding:0.5rem 1rem;"
+    >
+      Decline
+    </button>
+  </div> 
     <script src="script.js"></script>
   </main>
 </body>

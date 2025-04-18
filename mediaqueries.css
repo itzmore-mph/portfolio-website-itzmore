@@ -78,31 +78,6 @@
     /* revert any width/height overrides so it keeps 30×22px */
   }
 
-  /* slide‑in panel sits below the 10vh header & scrolls */
-  .menu-links {
-    position: fixed;
-    top: 10vh;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 10vh);
-    background: white;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-  }
-  .menu-links.open {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
   /* restore your other layout tweaks too… */
   #experience,
   .experience-details-container { margin-top: 2rem; }
@@ -127,8 +102,6 @@
 
 /* 600px and below */
 @media screen and (max-width: 600px) {
-  #contact,
-  footer { height: 40vh; }
   #profile {
     height: 83vh;
     margin-bottom: 0;
@@ -175,7 +148,16 @@
   .title {
     font-size: 2rem;
   }
-}
+
+  #manage-cookies {
+    padding: 1rem;
+  }
+
+  #cookie-consent-banner {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
 
 /* ===========================
    KEYFRAMES (defined once)
@@ -186,4 +168,5 @@
 }
 @keyframes blink {
   50% { border-color: transparent; }
+}
 }
