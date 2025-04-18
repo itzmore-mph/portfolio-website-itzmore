@@ -161,47 +161,56 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// —— Consent Opt-in —— 
+// —— Consent Opt‑in & GA loader —— 
 (function() {
-  const banner = document.getElementById('cookie-consent-banner');
+  const banner   = document.getElementById('cookie-consent-banner');
   const accepted = localStorage.getItem('cookieConsent');
-
-  // Show banner if no choice yet
-  if (!accepted) banner.style.display = 'block';
+  const GA_ID    = 'G-QKQ0F9HJ5M';  // use the normal ASCII hyphen!
 
   function initGA() {
-    // Your GA snippet, only called after consent
-    const id = 'G-XXXXXXXXXX';
+    // 1) load the library
     const s1 = document.createElement('script');
     s1.async = true;
-    s1.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+    s1.src   = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     document.head.appendChild(s1);
 
+    // 2) set up dataLayer & gtag()
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
+    window.gtag = function(){ dataLayer.push(arguments); };
+
+    // 3) initialize with IP anonymization
     gtag('js', new Date());
-    gtag('config', id, { page_path: window.location.pathname });
+    gtag('config', GA_ID, {
+      'anonymize_ip': true,
+      'page_path': window.location.pathname
+    });
   }
 
+  // show banner if no choice yet
+  if (!accepted) banner.style.display = 'block';
+
   document.getElementById('accept-cookies').onclick = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
+    localStorage.setItem('cookieConsent','accepted');
     banner.style.display = 'none';
     initGA();
   };
   document.getElementById('decline-cookies').onclick = () => {
-    localStorage.setItem('cookieConsent', 'declined');
+    localStorage.setItem('cookieConsent','declined');
     banner.style.display = 'none';
   };
 
-  // If already accepted, fire GA immediately
+  // if they already accepted on a previous visit, fire GA now
   if (accepted === 'accepted') {
     initGA();
   }
+  const manageBtn = document.getElementById('manage-cookies');
+  if (manageBtn) {
+    manageBtn.addEventListener('click', e => {
+      e.preventDefault();
+      localStorage.removeItem('cookieConsent');
+      // either reload, or just show the banner in place:
+      // location.reload();
+      banner.style.display = 'block';
+    });
+  }
 })();
-
-document.getElementById('manage-cookies').addEventListener('click', e => {
-  e.preventDefault();
-  localStorage.removeItem('cookieConsent');
-  location.reload(); // banner will re‑appear
-});

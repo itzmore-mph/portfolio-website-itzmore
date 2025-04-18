@@ -1194,3 +1194,16 @@ footer p {
   font-size: 0.9rem;
   color: #666;
 }
+
+#manage-cookies {
+  display: inline-block;
+  margin: 2rem auto 0;
+  text-decoration: underline;
+  color: var(--text-color);
+  cursor: pointer;
+}
+footer .copy + #manage-cookies {
+  /* center under your footer nav: */
+  display: block;
+  text-align: center;
+}
