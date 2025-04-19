@@ -37,10 +37,9 @@
   }
 
   #hamburger-nav .hamburger-icon {
-    flex: 0 0 auto;
-    margin: 0;
-    align-self: center;
-    z-index: 1002;
+    position: static;  /* or relative */
+    top: auto;
+    right: 1rem;
   }
 
   .hamburger-icon .icon-close  { display: none; }
