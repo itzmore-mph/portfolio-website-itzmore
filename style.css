@@ -230,7 +230,6 @@ nav { /* Dark background for contrast */
 }
 
 .nav-links li a.active {
-  color: var(--accent-color, #0077cc);
   text-decoration: underline;
   font-weight: 600;
 }

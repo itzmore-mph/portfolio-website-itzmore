@@ -79,7 +79,6 @@
       blink          0.75s step-end infinite;
   }
 
-  /* restore your other layout tweaks too… */
   #experience,
   .experience-details-container { margin-top: 2rem; }
   #profile,
@@ -87,7 +86,10 @@
   .arrow-wrapper                { display: none; }
   section,
   .section-container            { height: auto; margin: 0 5%; }
-  .section__pic-container       { width: 275px; height: 275px; margin: 0 auto 2rem; }
+  .section__pic-container       { 
+    width: 100%; 
+    height: auto;
+  }
   .about-containers             { margin-top: 0; }
 }
 
@@ -138,11 +140,11 @@
     gap: 0.5rem;
     text-align: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    margin: 0 auto;
+  .section__pic-container { 
+    width: 100%; 
+    height: auto;
   }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
@@ -159,6 +161,19 @@
     gap: 0.5rem;
   }
 
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .section__pic-container img {
+    max-width: 100%; 
+    height: auto;
+  }
+
+  .section__text {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
 /* ===========================
    KEYFRAMES (defined once)
