@@ -1080,6 +1080,31 @@ PROJECTS SECTION
   margin: 2rem 0;
 }
 
+.styled-list {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  list-style-type: disc;
+}
+
+.styled-list li {
+  margin-bottom: 0.5rem;
+}
+
+.project-card-full code {
+  background: #f4f4f4;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.project-card-full h3,
+.project-card-full h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
 /* =========================
 CONTACT SECTION
 ========================= */
