@@ -1082,6 +1082,34 @@ PROJECTS SECTION
   border-radius: 10px;
 }
 
+#projects .project-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 3rem auto;
+  max-width: 800px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#projects .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the thumbnail image */
+#projects .project-card .project-img-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Ensure buttons sit nicely */
+#projects .project-card .btn-container {
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
 /* =========================
 CONTACT SECTION
 ========================= */
