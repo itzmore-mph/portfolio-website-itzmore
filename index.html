@@ -344,123 +344,100 @@
       </div>
     </section>    
     <section id="projects">
-      <p class="section__text__p1">Check Out My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">              
-              <div class="details-container color-container">
-                <div class="article-container">
-                  <a href="https://football-analytics-portfolio.streamlit.app" target="_blank" rel="noopener">
-                    <img
-                      src="./assets/project-1.png"
-                      alt="Streamlit Dashboard Preview"
-                      class="project-img"
-                    >
-                  </a>                  
-                </div>
-              </div>
-            </div>
-            <h2 class="experience-sub-title project-title">Football Analytics Portfolio - Expected Goals (xG) & Passing Networks</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/itzmore-mph/football-analytics-portfolio'"
-              >
-              Check GitHub Repository
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://football-analytics-portfolio.streamlit.app/'"
-              >
-                Open Streamlit Dashboard
-              </button>
-            </div>
-            <div class="project-card-full">
-              <div class="project-overview">
-                <h3>Project Overview</h3>
-                <p>
-                  Developed a football analytics project applying machine learning and data visualization to analyze expected goals (xG) and passing networks. Built an xG prediction model using XGBoost and analyzed team passing structures with NetworkX. The results are displayed in an interactive Streamlit dashboard. You can find the complete implementation and code in the accompanying 
-                  <a href="https://github.com/itzmore-mph/football-analytics-portfolio" target="_blank">GitHub repository</a>.
-                </p>
-              </div>
-            
-              <hr >
-            
-              <div class="project-tech">
-                <h4>Technologies Used:</h4>
-                <ul>
-                  <li><strong>Programming Language:</strong> Python</li>
-                  <li><strong>Machine Learning:</strong> XGBoost, scikit-learn</li>
-                  <li><strong>Data Processing:</strong> pandas, NumPy</li>
-                  <li><strong>Data Visualization:</strong> mplsoccer, Matplotlib, Plotly</li>
-                  <li><strong>Web App:</strong> Streamlit</li>
-                  <li><strong>Data Source:</strong> StatsBomb event data</li>
-                  <li><strong>Version Control:</strong> Git, GitHub</li>
-                </ul>
-              </div>
-            </div>
+      <div class="section-heading">
+        <p class="subtitle">Check Out My Recent</p>
+        <h1 class="title">Projects</h1>
+      </div>
+      <!-- Football Analytics Portfolio -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <a href="https://football-analytics-portfolio.streamlit.app" target="_blank" rel="noopener">
+            <img
+              src="./assets/project-1.png"
+              alt="Streamlit Dashboard Preview"
+              class="project-img"
+            >
+          </a>
+        </div>
+        <h2 class="project-title">
+          Football Analytics Portfolio – Expected Goals (xG) &amp; Passing Networks
+        </h2>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/itzmore-mph/football-analytics-portfolio'">
+            Check GitHub Repository
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='https://football-analytics-portfolio.streamlit.app/'">
+            Open Streamlit Dashboard
+          </button>
+        </div>
+        <div class="project-card-full">
+          <div class="project-overview">
+            <h3>Project Overview</h3>
+            <p>
+              Developed a football analytics project applying machine learning and data visualization to analyze expected goals (xG) and passing networks. Built an xG prediction model using XGBoost and analyzed team passing structures with NetworkX. The results are displayed in an interactive Streamlit dashboard. You can find the complete implementation and code in the accompanying 
+              <a href="https://github.com/itzmore-mph/football-analytics-portfolio" target="_blank">GitHub repository</a>.
+            </p>
+          </div>
+          <hr>
+          <div class="project-tech">
+            <h4>Technologies Used:</h4>
+            <ul>
+              <li><strong>Python:</strong> pandas, NumPy, mplsoccer…</li>
+              <li><strong>Web App:</strong> Streamlit</li>
+              <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="project-card">
-      <div class="project-img-container">
-        <a href="https://github.com/itzmore-mph/itzmore-mph-portfolio" target="_blank" rel="noopener">
-          <img
-            src="./assets/project-bundesliga.png"
-            alt="Screenshot of Bundesliga Performance Analysis"
-            class="project-img"
-          >
-        </a>
-      </div>
-
-      <h2 class="experience-sub-title project-title">
-        Bundesliga Performance & Valuation Analysis
-      </h2>
-
-      <div class="btn-container">
-        <button
-          class="btn btn-color-2 project-btn"
-          onclick="window.open('https://github.com/itzmore-mph/itzmore-mph-portfolio', '_blank')"
-        >
-          View Code on GitHub
-        </button>
-        <button
-          class="btn btn-color-2 project-btn"
-          onclick="window.open('https://itzmore-mph.github.io/itzmore-mph-portfolio/', '_blank')"
-        >
-          Live Notebook Preview
-        </button>
-      </div>
-
-      <div class="project-card-full">
-        <div class="project-overview">
-          <h3>Project Overview</h3>
-          <p>
-            A deep-dive into FC Bayern Munich’s 2023/24 season:  
-            • Aggregated match events & market values via Pandas & DuckDB  
-            • Explored goals vs. assists bubble charts, match-result barplots & valuation trends  
-            • Built a Ridge regression to test on-field stats vs. player market value  
-            • Prepared interactive visualizations with Matplotlib, Seaborn & adjustText  
-          </p>
+      <!-- Bundesliga Performance & Valuation Analysis -->
+      <div class="project-card">
+        <div class="project-image-container">
+          <a href="https://github.com/itzmore-mph/itzmore-mph-portfolio" target="_blank" rel="noopener">
+            <img
+              src="./assets/project-bundesliga.png"
+              alt="Screenshot of Bundesliga Performance Analysis"
+              class="project-img"
+            >
+          </a>
         </div>
-        <hr>
-        <div class="project-tech">
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li><strong>Python:</strong> pandas, NumPy, matplotlib, seaborn</li>
-            <li><strong>SQL:</strong> DuckDB in-memory analysis</li>
-            <li><strong>Machine Learning:</strong> scikit-learn (Ridge regression)</li>
-            <li><strong>Visualization:</strong> adjustText, matplotlib.dates, log-scale plots</li>
-            <li><strong>Packaging:</strong> requirements.txt, README.md, GitHub Pages</li>
-          </ul>
+        <h2 class="project-title">
+          Bundesliga Performance &amp; Valuation Analysis
+        </h2>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('https://github.com/itzmore-mph/itzmore-mph-portfolio','_blank')">
+            View Code on GitHub
+          </button>
+          <button class="btn btn-color-1" onclick="window.open('https://itzmore-mph.github.io/itzmore-mph-portfolio/','_blank')">
+            Live Notebook Preview
+          </button>
+        </div>
+        <div class="project-card-full">
+          <div class="project-overview">
+            <h3>Project Overview</h3>
+            <p>
+              A deep-dive into FC Bayern Munich’s 2023/24 season:  
+              • Aggregated match events & market values via Pandas & DuckDB  
+              • Explored goals vs. assists bubble charts, match-result barplots & valuation trends  
+              • Built a Ridge regression to test on-field stats vs. player market value  
+              • Prepared interactive visualizations with Matplotlib, Seaborn & adjustText
+            </p>
+          </div>
+          <hr>
+          <div class="project-tech">
+            <h4>Technologies Used:</h4>
+            <ul>
+              <li><strong>Python:</strong> pandas, NumPy, matplotlib, seaborn</li>
+              <li><strong>SQL:</strong> DuckDB</li>
+              <li><strong>ML:</strong> scikit-learn (Ridge regression)</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    
       <div class="more-projects-coming">
-        <p>More to come </p>
+        <p>More to come</p>
       </div>
+    
       <div class="arrow-wrapper">
         <img
           src="./assets/arrow.png"
@@ -468,8 +445,8 @@
           class="section-arrow"
           onclick="location.href='#contact'"
         >
-      </div>      
-    </section>
+      </div>
+    </section>    
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>

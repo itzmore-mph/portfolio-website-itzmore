@@ -122,6 +122,10 @@
   #projects .project-card .btn {
     width: 100%;
   }
+  #projects .project-card {
+    max-width: 95%;
+    padding: 1rem;
+  }
 }
 
 /* 600px and below */
