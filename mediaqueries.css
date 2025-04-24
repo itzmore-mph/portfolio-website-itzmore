@@ -199,3 +199,13 @@
     width: 100%;
     box-sizing: border-box;
   }
+
+  .contact-info-container span {
+    font-size: 0.85rem; /* or try 0.8rem depending on space */
+    word-break: break-all; /* optional: allows breaking long emails nicely */
+  }
+  .contact-info-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
