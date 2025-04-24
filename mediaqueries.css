@@ -102,6 +102,27 @@
   50% { border-color: transparent; }
 }
 
+/* 768px and below */
+@media screen and (max-width: 768px) {
+  /* Make project cards full-width with small margins */
+  #projects .project-card {
+    margin: 2rem 1rem;
+    max-width: none;
+  }
+  /* Tighter padding around the image */
+  #projects .project-card .project-img-container {
+    padding: 0.5rem;
+  }
+  /* Stack buttons and stretch them full width */
+  #projects .project-card .btn-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  #projects .project-card .btn {
+    width: 100%;
+  }
+}
 
 /* 600px and below */
 @media screen and (max-width: 600px) {
@@ -174,15 +195,3 @@
     width: 100%;
     box-sizing: border-box;
   }
-
-/* ===========================
-   KEYFRAMES (defined once)
-   =========================== */
-@keyframes typing-mobile {
-  from { width: 0ch; }
-  to   { width: 17ch; }
-}
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-}
