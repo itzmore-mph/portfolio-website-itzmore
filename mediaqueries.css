@@ -1,16 +1,18 @@
 /* ===========================
    RESPONSIVE LAYOUT
-   =========================== */
+=========================== */
 
 /* 1400px and below */
 @media screen and (max-width: 1400px) {
   .about-containers {
     flex-wrap: wrap;
   }
+
   #contact,
   #projects {
     height: auto;
   }
+
   .profile-container {
     flex-direction: column;
     align-items: center;
@@ -19,7 +21,7 @@
   .section__pic-container {
     width: 100%;
     max-width: 280px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .section__text {
@@ -28,19 +30,16 @@
   }
 
   #profile {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 3rem 1rem;
   }
 }
 
 /* 1200px and below */
 @media screen and (max-width: 1200px) {
-  /* hide desktop nav */
   #desktop-nav {
     display: none !important;
   }
 
-  /* show only the mobile bar, 10vh tall */
   #hamburger-nav {
     display: flex;
     position: sticky;
@@ -53,16 +52,15 @@
   }
 
   #hamburger-nav .hamburger-icon {
-    position: static;  /* or relative */
+    position: static;
     top: auto;
     right: 1rem;
   }
 
-  .hamburger-icon .icon-close  { display: none; }
+  .hamburger-icon .icon-close { display: none; }
   .hamburger-icon.is-open .icon-close { display: block; }
-  .hamburger-icon.is-open .icon-open  { display: none; }
+  .hamburger-icon.is-open .icon-open { display: none; }
 
-  /* single flex‐row wrapper: logo (flex:1) + icon (flex:0) */
   #hamburger-nav .hamburger-menu {
     display: flex;
     align-items: center;
@@ -70,90 +68,102 @@
     width: 100%;
   }
 
-  /* logo grows to fill all leftover space */
   #hamburger-nav .logo {
     flex: 1 1 auto;
   }
 
-  /* swap out the long logo for the short one */
   .full-logo {
     display: none !important;
   }
+
   .short-logo {
     display: block !important;
   }
 
-  /* typewriter lives ONLY in the logo, clipped there */
   #hamburger-nav .short-logo .logo-typewriter {
     display: inline-block;
-    width: 0ch;                     /* start zero width */
-    overflow: hidden;               /* hide overflow as it types */
-    text-align: left;               /* left‐align the letters */
+    width: 0ch;
+    overflow: hidden;
+    text-align: left;
     border-right: 2px solid currentColor;
     animation:
       typing-mobile 2s steps(16,end) forwards,
-      blink          0.75s step-end infinite;
+      blink 0.75s step-end infinite;
   }
 
   #experience,
   .experience-details-container { margin-top: 2rem; }
+
   #profile,
-  .section-container            { display: block; }
-  .arrow-wrapper                { display: none; }
+  .section-container {
+    display: block;
+  }
+
+  .arrow-wrapper {
+    display: none;
+  }
+
   section,
-  .section-container            { height: auto; margin: 0 5%; }
-  .section__pic-container       { 
-    width: 100%; 
+  .section-container {
+    height: auto;
+    margin: 0 5%;
+  }
+
+  .section__pic-container {
+    width: 100%;
     height: auto;
   }
-  .about-containers             { margin-top: 0; }
+
+  .about-containers {
+    margin-top: 0;
+  }
 }
 
-/* keyframes */
+/* Keyframes for mobile typing */
 @keyframes typing-mobile {
   from { width: 0ch; }
   to   { width: 17ch; }
 }
+
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
 /* 768px and below */
 @media screen and (max-width: 768px) {
-  /* Make project cards full-width with small margins */
   #projects .project-card {
     margin: 2rem 1rem;
     max-width: none;
+    padding: 1rem;
   }
-  /* Tighter padding around the image */
+
   #projects .project-card .project-img-container {
     padding: 0.5rem;
   }
-  /* Stack buttons and stretch them full width */
+
   #projects .project-card .btn-container {
     flex-direction: column;
     gap: 0.75rem;
     margin: 1rem 0;
   }
+
   #projects .project-card .btn {
     width: 100%;
   }
-  #projects .project-card {
-    max-width: 95%;
-    padding: 1rem;
-  }
 
-html {
+  html {
     scroll-snap-type: none !important;
   }
-section {
+
+  section {
     scroll-snap-align: none !important;
   }
 
   .btn-container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: center;
+    margin-top: 1.5rem;
   }
 
   .btn {
@@ -175,11 +185,17 @@ section {
 
   .section__pic-container {
     width: 80%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .section__text {
     width: 90%;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -187,8 +203,10 @@ section {
 @media screen and (max-width: 600px) {
   #profile {
     height: auto !important;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
+
   .section__text p,
   .section__text__p1,
   .section__text__p2,
@@ -196,38 +214,54 @@ section {
   #tagline {
     text-align: center;
   }
+
   article,
   .experience-sub-title {
     font-size: 1rem;
   }
+
   footer nav {
     height: auto;
   }
+
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
+
   .contact-info-container {
     margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
+
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
-  .section__pic-container { 
-    width: 100%; 
+
+  .section__pic-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .section__pic-container img {
+    max-width: 100%;
     height: auto;
   }
 
   .section__text__p2 {
     font-size: 1.25rem;
   }
+
   .title {
     font-size: 2rem;
   }
@@ -241,29 +275,18 @@ section {
     gap: 0.5rem;
   }
 
-  .section__pic-container img {
-    max-width: 100%; 
-    height: auto;
-  }
-
   .section__text {
     width: 100%;
     box-sizing: border-box;
   }
 
   .contact-info-container span {
-    font-size: 0.8rem; /* or try 0.8rem depending on space */
-    word-break: break-all; /* optional: allows breaking long emails nicely */
-  }
-
-  .contact-info-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    font-size: 0.8rem;
+    word-break: break-all;
   }
 
   .logo-typewriter {
     max-width: 90vw;
-    font-size: 1.3rem; /* optional: downscale for smaller view */
+    font-size: 1.3rem;
   }
 }
