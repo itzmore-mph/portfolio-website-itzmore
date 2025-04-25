@@ -25,11 +25,6 @@ body {
   padding-bottom: 4rem;
 }
 
-#contact,
-footer {
-  padding-bottom: 6rem; /* adjust based on sticky bar height */
-}
-
 body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
@@ -1236,14 +1231,11 @@ CONTACT SECTION
    FOOTER SECTION
 ========================== */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
-  background: white;
-  border-top: 1px solid #ddd;
-  text-align: center;
-  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 2rem;
 }
 
 footer nav {
