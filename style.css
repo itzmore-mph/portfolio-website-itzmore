@@ -471,21 +471,27 @@ section {
     text-align: center;
   }
 
-.section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+  .section__pic-container {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+  }
+  
 
-.section__text {
-  align-self: center;
-  text-align: center;
-}
+  .section__text {
+    flex: 1 1 300px;
+    max-width: 500px;
+    text-align: center;
+    word-break: break-word;
+  }
 
-.section__text p {
-  font-weight: 600;
-}
+  .section__text p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
 
 .section__text__p1 {
   text-align: center;

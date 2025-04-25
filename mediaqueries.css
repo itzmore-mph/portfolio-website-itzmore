@@ -171,8 +171,19 @@ section {
     width: 100%;
   }
 
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .section__pic-container {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
   .section__text {
-    padding: 0 1rem;
+    width: 90%;
   }
 }
 
