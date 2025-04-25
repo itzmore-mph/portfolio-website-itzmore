@@ -193,12 +193,10 @@ nav { /* Dark background for contrast */
   }
 
   .logo-typewriter {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #333;
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #333;
+    border-right: 2px solid currentColor;
     width: 0;
     animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
   }

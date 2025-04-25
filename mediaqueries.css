@@ -67,6 +67,18 @@
     display: block !important;
   }
 
+  .logo-typewriter {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    width: 0ch;
+    animation: typing-mobile 2s steps(16, end) forwards, blink 0.75s step-end infinite;
+  }
+}
+
+@keyframes typing-mobile {
+  from { width: 0ch; }
+  to { width: 17ch; }
+}
+
   /* typewriter lives ONLY in the logo, clipped there */
   #hamburger-nav .short-logo .logo-typewriter {
     display: inline-block;
@@ -212,4 +224,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+
+  .logo-typewriter {
+    max-width: 90vw;
+    font-size: 1.3rem; /* optional: downscale for smaller view */
   }
