@@ -147,8 +147,32 @@
     padding: 1rem;
   }
 
-  html {
-    scroll-snap-type: none;
+html {
+    scroll-snap-type: none !important;
+  }
+section {
+    scroll-snap-align: none !important;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn {
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .section__text,
+  .section__pic-container {
+    width: 100%;
+  }
+
+  .section__text {
+    padding: 0 1rem;
   }
 }
 

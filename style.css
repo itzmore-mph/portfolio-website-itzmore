@@ -89,11 +89,12 @@ img,
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -457,7 +458,8 @@ section {
 #profile {
     text-align: center;
     height: auto;
-    padding: 4rem 1rem;
+    padding: 4rem;
+    position: relative;
   }
 
 #profile h1,
@@ -600,9 +602,10 @@ section {
    ABOUT SECTION
 ========================= */
 
-#about {
-    max-width: 1200px;
-    margin: 2rem auto;
+  #about {
+    padding-top: 6rem;
+    margin-top: 0;
+    position: relative;
   }
   
   .about-wrapper {
