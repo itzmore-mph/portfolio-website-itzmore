@@ -44,11 +44,6 @@ html, body {
   max-width: 100%;
 }
 
-body.menu-open {
-  overflow: auto !important;
-  height: auto !important;
-}
-
 img {
   max-width: 100%;
   height: auto;
