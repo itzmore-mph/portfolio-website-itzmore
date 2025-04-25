@@ -22,6 +22,12 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  padding-bottom: 4rem;
+}
+
+#contact,
+footer {
+  padding-bottom: 6rem; /* adjust based on sticky bar height */
 }
 
 body, h1, h2, h3, p {
@@ -42,11 +48,13 @@ html {
 
 html, body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
-body.menu-open {
-  overflow: auto !important;
-  height: auto !important;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 img {
@@ -92,7 +100,7 @@ img,
 }
 
 .scroll-indicator {
-  position: absolute;
+  flex: auto;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
@@ -176,7 +184,7 @@ nav { /* Dark background for contrast */
   #desktop-nav {
     position: sticky;
     top: 0;
-    z‑index: 1000;           /* sit above your content */
+    z-index: 1000;           /* sit above your content */
     background: white;       /* ensure it covers what’s behind */
   } 
   /* Logo Styling */
@@ -457,12 +465,26 @@ section {
   transform: translateY(5px);
 }
 
+.section-arrow.back-to-top {
+  transform: rotate(180deg);
+  animation: bounce-up 2s infinite;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+@keyframes bounce-up {
+  0%, 100% {
+    transform: rotate(180deg) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) translateY(6px);
   }
 }
 
@@ -483,25 +505,31 @@ section {
     padding-top: 0;
   }
 
+.project-image-container,
 .profile-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
   flex-wrap: wrap;
   gap: 2rem;
 }
+
 
   .section__text {
     max-width: 500px;
     text-align: center;
   }
 
-.section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+  .section__pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }  
 
 .section__text {
   align-self: center;
@@ -623,7 +651,6 @@ section {
     max-width: 1200px;
     margin: 2rem auto;
     margin-top: 4rem;
-    margin-bottom: 0rem;
   }
   
   .about-wrapper {
@@ -927,6 +954,18 @@ PROJECTS SECTION
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
   }
+
+.profile-img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+  
+
   
   .project-img:hover {
     transform: scale(1.02);
@@ -942,6 +981,9 @@ PROJECTS SECTION
 .project-title {
   margin: 2rem;
   color: black;
+  word-break: break-word;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .project-btn {
@@ -1194,12 +1236,14 @@ CONTACT SECTION
    FOOTER SECTION
 ========================== */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  padding-bottom: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
   background: white;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 0.75rem;
 }
 
 footer nav {

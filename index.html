@@ -88,7 +88,7 @@
     <section id="profile">
       <div class="profile-container">
         <div class="section__pic-container">
-          <img src="./assets/profile-pic.png" alt="Portrait of Moritz Philipp Haaf" >
+          <img src="./assets/profile-pic.png" alt="Portrait of Moritz Philipp Haaf" class="profile-img" >
         </div>
         <div class="section__text">
           <p class="section__text__p1">Hello, I'm</p>
@@ -399,48 +399,47 @@
         </div>
       </div>
       <!-- Bundesliga Performance & Valuation Analysis -->
-      <div class="project-card">
-        <div class="project-image-container">
-          <a href="https://github.com/itzmore-mph/itzmore-mph-portfolio" target="_blank" rel="noopener">
-            <img
-              src="./assets/project-bundesliga.png"
-              alt="Screenshot of Bundesliga Performance Analysis"
-              class="project-img"
-            >
-          </a>
-        </div>
-        <h2 class="project-title">
-          Bundesliga Performance &amp; Valuation Analysis
-        </h2>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('https://github.com/itzmore-mph/BundesligaPerformanceAnalysis','_blank')">
-            View Code on GitHub
-          </button>
-          <button class="btn btn-color-1" onclick="window.open('https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/','_blank')">
-            Live Notebook Preview
-          </button>
-        </div>
-        <div class="project-card-full">
-            <h3>Project Overview</h3>
-            <p>A deep dive into <strong>FC Bayern Munich’s 2023/24 season</strong>:</p>
-            <ul class="styled-list">
-              <li>Aggregated match events and market values using <code>Pandas</code> & <code>DuckDB</code></li>
-              <li>Visualized goals vs. assists, match results, and valuation trends using bubble and bar plots</li>
-              <li>Applied <code>Ridge Regression</code> to correlate on-field stats with player market value</li>
-              <li>Created interactive visualizations with <code>Matplotlib</code>, <code>Seaborn</code>, and <code>adjustText</code></li>
-            </ul>
-          </div>          
-          <hr>
-          <div class="project-card-full project-tech">
-            <h4>Technologies Used:</h4>
-            <ul class="styled-list">
-              <li><strong>Python:</strong> <code>pandas</code>, <code>NumPy</code>, <code>matplotlib</code>, <code>seaborn</code></li>
-              <li><strong>SQL:</strong> <code>DuckDB</code></li>
-              <li><strong>ML:</strong> <code>scikit-learn (Ridge regression)</code></li>
-            </ul>
-        </div>
-      </div>
-  
+<div class="project-card">
+  <div class="project-image-container">
+    <a href="https://github.com/itzmore-mph/itzmore-mph-portfolio" target="_blank" rel="noopener">
+      <img
+        src="./assets/bundesliga-project-preview.png"
+        alt="Screenshot of Bundesliga Performance Analysis"
+        class="project-img"
+      >
+    </a>
+  </div>
+  <h2 class="project-title">
+    Bundesliga Performance &amp; Valuation: Bayer Leverkusen Case Study
+  </h2>
+  <div class="btn-container">
+    <button class="btn btn-color-2" onclick="window.open('https://github.com/itzmore-mph/BundesligaPerformanceAnalysis','_blank')">
+      View Code on GitHub
+    </button>
+    <button class="btn btn-color-1" onclick="window.open('https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/','_blank')">
+      Live Notebook Preview
+    </button>
+  </div>
+  <div class="project-card-full">
+    <h3>Project Overview</h3>
+    <p>An analytical deep dive into <strong>Bayer 04 Leverkusen’s historic unbeaten Bundesliga 2023/24 season</strong>:</p>
+    <ul class="styled-list">
+      <li>Explored player performance, valuation trends, and match dominance using <code>Pandas</code> & <code>DuckDB</code></li>
+      <li>Visualized cumulative goals/assists, W-D-L results, and standout match moments <br> (e.g. 3–0 vs Bayern)</li>
+      <li>Used <code>Ridge Regression</code> and <code>Random Forest</code> to evaluate what influences player market value</li>
+      <li>Featured storytelling and feature importance with <code>Seaborn</code>, <code>Matplotlib</code>, and <code>adjustText</code></li>
+    </ul>
+  </div>          
+  <hr>
+  <div class="project-card-full project-tech">
+    <h4>Technologies Used:</h4>
+    <ul class="styled-list">
+      <li><strong>Python:</strong> <code>pandas</code>, <code>NumPy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code></li>
+      <li><strong>SQL:</strong> <code>DuckDB</code></li>
+      <li><strong>Machine Learning:</strong> <code>scikit-learn</code> (<code>Ridge</code>, <code>RandomForestRegressor</code>)</li>
+    </ul>
+  </div>
+</div>
       <div class="more-projects-coming">
         <p>More to come</p>
       </div>
@@ -448,9 +447,9 @@
       <div class="arrow-wrapper">
         <img
           src="./assets/arrow.png"
-          alt="Scroll down"
-          class="section-arrow"
-          onclick="location.href='#contact'"
+          alt="Back to top"
+          class="section-arrow back-to-top"
+          onclick="location.href='#profile'"
         >
       </div>
     </section>    
