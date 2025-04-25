@@ -459,12 +459,13 @@ section {
     padding-top: 0;
   }
 
-.profile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
+  .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
 
   .section__text {
     max-width: 500px;
@@ -476,7 +477,6 @@ section {
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin: auto;
     justify-content: center;
   }
   
@@ -873,6 +873,11 @@ SKILLS SECTION
     font-size: 0.9rem;
     color: #666;
   }
+
+.date,
+.date span {
+  color: #333; /* or whatever your desired color is */
+}
 
   .skills-box .skills-columns .skill-item:last-child {
     grid-column: 1 / -1;
