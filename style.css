@@ -608,7 +608,7 @@ section {
   .about-wrapper {
     display: flex;
     gap: 2rem;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
   }
   
