@@ -70,11 +70,6 @@ a:hover {
   text-decoration-color: rgba(0, 0, 0, 0.2);
 }
 
-main,
-footer {
-  padding-bottom: 6rem; 
-}
-
 p {
   color: rgb(85, 85, 85);
 }
