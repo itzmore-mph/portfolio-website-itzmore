@@ -90,7 +90,7 @@ img,
 }
 
 .scroll-indicator {
-  flex: auto;
+  position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
@@ -641,6 +641,7 @@ section {
     max-width: 1200px;
     margin: 2rem auto;
     margin-top: 4rem;
+    margin-bottom: 0rem;
   }
   
   .about-wrapper {
