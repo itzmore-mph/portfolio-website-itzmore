@@ -22,7 +22,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
+<<<<<<< HEAD
   padding-bottom: 4rem;
+=======
+>>>>>>> parent of 58c7568 (Update style.css)
 }
 
 body, h1, h2, h3, p {
@@ -1232,6 +1235,10 @@ footer {
   align-items: center;
   padding: 1rem;
   padding-bottom: 2rem;
+<<<<<<< HEAD
+=======
+  background: white;
+>>>>>>> parent of 58c7568 (Update style.css)
 }
 
 footer nav {
