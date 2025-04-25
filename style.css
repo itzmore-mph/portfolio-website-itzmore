@@ -171,7 +171,7 @@ nav { /* Dark background for contrast */
   #desktop-nav {
     position: sticky;
     top: 0;
-    z‑index: 1000;           /* sit above your content */
+    z-index: 1000;           /* sit above your content */
     background: white;       /* ensure it covers what’s behind */
   } 
   /* Logo Styling */
