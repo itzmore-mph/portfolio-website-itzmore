@@ -77,6 +77,12 @@ p {
   margin-top: 2rem;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 .title,
 .section__text__p1,
 img,
@@ -600,9 +606,9 @@ section {
 ========================= */
 
   #about {
-    padding-top: 6rem;
-    margin-top: 0;
     position: relative;
+    margin: 0 auto;
+    padding: 4rem;
   }
   
   .about-wrapper {
@@ -633,23 +639,23 @@ section {
     gap: 2rem;
   }
   
+
   .about-highlight-boxes {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    align-items: stretch; /* ensures all items fill height */
   }
   
   .details-container {
-    flex: 1 1 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* centers content vertically */
-    min-height: 140px; /* or whatever gives a clean result */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     background-color: white;
     border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1 1 200px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
   }
+
   
   .details-container h3 {
     margin-top: 0.5rem;
