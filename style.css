@@ -20,6 +20,12 @@
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -42,6 +48,7 @@ html {
 
 html, body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -60,11 +67,6 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 0.5rem;
   text-decoration-color: rgba(0, 0, 0, 0.2);
-}
-
-main,
-footer {
-  padding-bottom: 6rem; 
 }
 
 p {
@@ -264,7 +266,6 @@ button:focus {
   position:fixed;
   right: 3.5rem;
   top: 1.25rem;
-  padding: 0.5rem;
   border-radius: 6px;
   z-index: 1002;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -456,6 +457,7 @@ section {
 #profile {
     text-align: center;
     height: auto;
+    padding: 4rem 1rem;
   }
 
 #profile h1,
@@ -466,9 +468,8 @@ section {
 
 .profile-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -600,11 +601,8 @@ section {
 ========================= */
 
 #about {
-    padding: 10rem 1rem;
     max-width: 1200px;
     margin: 2rem auto;
-    margin-top: 4rem;
-    margin-bottom: 0rem;
   }
   
   .about-wrapper {
@@ -887,7 +885,6 @@ PROJECTS SECTION
 #projects {
   position: relative;
   max-width: 1300px;margin: 0 auto;
-  padding: 2rem 1rem 4rem;
 }
 
 .color-container {
