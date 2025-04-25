@@ -637,16 +637,18 @@ section {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    align-items: stretch; /* ensures all items fill height */
   }
   
   .details-container {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers content vertically */
+    min-height: 140px; /* or whatever gives a clean result */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 1.5rem;
-    flex: 1 1 200px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
   }
   
   .details-container h3 {
