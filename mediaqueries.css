@@ -4,10 +4,6 @@
 
 /* 1400px and below */
 @media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
   .about-containers {
     flex-wrap: wrap;
   }
@@ -190,8 +186,8 @@ section {
 /* 600px and below */
 @media screen and (max-width: 600px) {
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    height: auto !important;
+    padding-bottom: 4rem;
   }
   .section__text p,
   .section__text__p1,

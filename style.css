@@ -523,7 +523,7 @@ section {
   margin-bottom: 2rem;
   padding: 0 1rem;
   text-align: center;
-  animation: fadein 1.5s ease-in-out;
+  animation: fade 1.5s ease-in-out;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   line-height: 1.6;
@@ -533,7 +533,7 @@ section {
   opacity: 0;
 }
 
-@keyframes fadein {
+@keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
