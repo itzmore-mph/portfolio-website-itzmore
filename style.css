@@ -478,25 +478,31 @@ section {
     padding-top: 0;
   }
 
+.project-image-container,
 .profile-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
   flex-wrap: wrap;
   gap: 2rem;
 }
+
 
   .section__text {
     max-width: 500px;
     text-align: center;
   }
 
-.section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+  .section__pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }  
 
 .section__text {
   align-self: center;
@@ -922,6 +928,18 @@ PROJECTS SECTION
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
   }
+
+.profile-img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+  
+
   
   .project-img:hover {
     transform: scale(1.02);
