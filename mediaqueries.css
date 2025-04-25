@@ -95,6 +95,7 @@
   .experience-details-container { margin-top: 2rem; }
   #profile,
   .section-container            { display: block; }
+  .arrow-wrapper                { display: none; }
   section,
   .section-container            { height: auto; margin: 0 5%; }
   .section__pic-container       { 
@@ -102,6 +103,7 @@
     height: auto;
   }
   .about-containers             { margin-top: 0; }
+}
 
 /* keyframes */
 @keyframes typing-mobile {
@@ -241,8 +243,9 @@
     gap: 0.5rem;
   }
 
-  .logo-typewriter {
-    max-width: 90vw;
-    font-size: 1.3rem; /* optional: downscale for smaller view */
+    .logo-typewriter {
+      max-width: 90vw;
+      font-size: 1.3rem; /* optional: downscale for smaller view */
   }
+  .arrow-wrapper { display: none; }
 }
