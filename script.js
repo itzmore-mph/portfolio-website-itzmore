@@ -135,11 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // —— SECTION ARROW NAVIGATION ——  
   sectionArrows.forEach(arrow => {
     arrow.addEventListener("click", () => {
-      const nextSection = arrow.closest("section")?.nextElementSibling;
-      nextSection?.scrollIntoView({ behavior: "smooth" });
+      if (arrow.classList.contains("back-to-top")) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const nextSection = arrow.closest("section")?.nextElementSibling;
+        nextSection?.scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
-
   // —— OPTIONAL RESIZE HANDLER ——  
   window.addEventListener(
     "resize",
