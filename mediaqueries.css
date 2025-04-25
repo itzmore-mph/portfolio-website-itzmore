@@ -126,6 +126,10 @@
     max-width: 95%;
     padding: 1rem;
   }
+
+  html {
+    scroll-snap-type: none;
+  }
 }
 
 /* 600px and below */
@@ -201,8 +205,8 @@
   }
 
   .contact-info-container span {
-    font-size: 0.85rem; /* or try 0.8rem depending on space */
-    word-break: break-all; /* optional: allows breaking long emails nicely */
+    font-size: 0.8rem;
+    max-width: 150px;
   }
   .contact-info-container {
     flex-direction: row;
