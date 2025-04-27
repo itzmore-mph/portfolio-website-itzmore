@@ -196,6 +196,16 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  /* Keyframes for mobile typing */
+@keyframes typing-mobile {
+  from { width: 0ch; }
+  to   { width: 18ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 }
 
 /* 600px and below */
