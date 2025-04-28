@@ -234,6 +234,19 @@
     font-size: 0.95rem;
   }
 
+  .about-highlight-boxes {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .details-container {
+    width: 100%;
+  }
+
   .about-text p {
     font-size: 1.05rem;
     line-height: 1.8;
