@@ -229,14 +229,17 @@
     margin: 0 auto 1.5rem;
   }
 
-  .details-container {
-    padding: 1rem;
-    font-size: 0.95rem;
+  .about-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
-
+  
   .about-highlight-boxes {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto 2rem;
     display: flex;
     flex-direction: column;
