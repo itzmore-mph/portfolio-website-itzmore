@@ -54,7 +54,6 @@
   #hamburger-nav .hamburger-icon {
     position: static;
     top: auto;
-    right: 1rem;
   }
 
   .hamburger-icon .icon-close { display: none; }
@@ -119,9 +118,7 @@
   }
 }
 
-@keyframes blink {
-  50% { border-color: transparent; }
-}
+
 
 /* 768px and below */
 @media screen and (max-width: 768px) {
@@ -235,6 +232,7 @@
     width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
+    margin-bottom: 2rem;
   }
   
   .about-highlight-boxes {
@@ -361,8 +359,7 @@
   from { width: 0ch; }
   to   { width: 17ch; }
 }
-
+}
 @keyframes blink {
   50% { border-color: transparent; }
-}
 }
