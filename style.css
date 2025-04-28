@@ -902,11 +902,10 @@ SKILLS SECTION
   color: #333; /* or whatever your desired color is */
 }
 
-  .skills-box .skills-columns .skill-item:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-  
+.skills-wrapper .skills-box:last-child .skills-columns .skill-item:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
 /* =========================
 PROJECTS SECTION
 ========================= */
