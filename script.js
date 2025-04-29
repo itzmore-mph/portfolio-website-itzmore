@@ -217,3 +217,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 })();
+
+// —— Current Year Function - Copyright —— 
+document.getElementById('year').textContent = new Date().getFullYear();
