@@ -201,6 +201,8 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+  .full-logo { display: none; }
+  .short-logo { display: inline; }
 }
 
 /* 600px and below */

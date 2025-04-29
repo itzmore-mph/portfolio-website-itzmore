@@ -178,13 +178,29 @@ nav { /* Dark background for contrast */
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #333;
-    width: 0;
-    animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    animation: blink 0.75s step-end infinite;
   }
 
-  @keyframes typing {
+  .logo-typewriter span {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: typing-full 3.5s steps(40, end) forwards;
+  }
+
+  .short-logo .logo-typewriter span {
+    animation: typing-short 2s steps(22, end) forwards;
+  }
+
+  @keyframes typing-full {
     from { width: 0 }
-    to { width: 100% }
+    to { width: 40ch } /* match actual characters in full text */
+  }
+  
+  @keyframes typing-short {
+    from { width: 0 }
+    to { width: 22ch } /* match actual characters in short text */
   }
   
   @keyframes blink {
@@ -192,12 +208,7 @@ nav { /* Dark background for contrast */
   }
 
   .short-logo { display: none; }
-@media (max-width: 768px) {
-  .full-logo { display: none; }
-  .short-logo { display: inline; }
-}
 
-  
   /* Navigation Links */
   .nav-links {
     list-style: none;
