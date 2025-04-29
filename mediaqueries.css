@@ -354,6 +354,16 @@
     max-width: 90vw;
     font-size: 1.3rem;
   }
+  .project-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  #freelance-page h1.title {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
 
   /* Keyframes for mobile typing */
 @keyframes typing-mobile {
