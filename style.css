@@ -1264,3 +1264,69 @@ footer .footer-nav .nav-links {
   color: #666;
   margin-top: 1rem;
 }
+
+/* =========================
+   FREELANCE LANDING PAGE
+========================= */
+
+/* ===== Freelance Landing Page ===== */
+
+.freelance-header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.freelance-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.freelance-header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.services-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.services-list li {
+  font-size: 1.1rem;
+  color: #555;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.contact-section a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
+}
+
+.contact-section a:hover {
+  color: black;
+}
