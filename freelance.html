@@ -20,7 +20,7 @@
   </nav>
 
   <main id="freelance-page">
-    <h1>Helping Football Clubs and Businesses Unlock the Power of Data.</h1>
+    <h1 class="title">Helping Football Clubs and Businesses Unlock the Power of Data.</h1>
 
     <section class="section">
       <h2>What I Offer</h2>
@@ -45,9 +45,13 @@
         <p class="project-summary">
           xG model & passing networks using <strong>Python, XGBoost & Streamlit</strong>.
         </p>
-        <div class="btn-container">
-          <a class="btn btn-color-1" href="https://football-analytics-dashboard.streamlit.app/" target="_blank">Live Demo</a>
-          <a class="btn btn-color-2" href="https://github.com/itzmore-mph/football-analytics-portfolio" target="_blank">GitHub</a>
+        <<div class="btn-container">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/itzmore-mph/football-analytics-portfolio'">
+            Check GitHub Repository
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='https://football-analytics-dashboard.streamlit.app/'">
+            Open Streamlit Dashboard
+          </button>
         </div>
       </div>
     
@@ -62,8 +66,12 @@
           Performance & valuation insights with <strong>Python, DuckDB & ML</strong>.
         </p>
         <div class="btn-container">
-          <a class="btn btn-color-1" href="https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/" target="_blank">View Notebook</a>
-          <a class="btn btn-color-2" href="https://github.com/itzmore-mph/BundesligaPerformanceAnalysis" target="_blank">GitHub</a>
+          <button class="btn btn-color-2" onclick="window.open('https://github.com/itzmore-mph/BundesligaPerformanceAnalysis','_blank')">
+            View Code on GitHub
+          </button>
+          <button class="btn btn-color-1" onclick="window.open('https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/','_blank')">
+            Live Notebook Preview
+          </button>
         </div>
       </div>
     
@@ -86,9 +94,44 @@
 
     <section class="section contact-section">
       <h2>Contact Me</h2>
-      <p>Email me at <a href="mailto:itzmore.dev@gmail.com" class="email-link">itzmore.dev@gmail.com</a><br>
-      or connect via <a href="https://www.linkedin.com/in/moritz-philipp-haaf/" class="email-link" target="_blank">LinkedIn</a>.</p>
+      <p>
+        Email me at <a href="mailto:itzmore.dev@gmail.com" class="contact-link">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          >
+          <span>itzmore.dev@gmail.com</span>
+        </a><br>
+        or connect via <a
+        href="https://www.linkedin.com/in/moritz-philipp-haaf/"
+        class="contact-link"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="./assets/linkedin.png"
+          alt="LinkedIn icon"
+          class="icon contact-icon"
+        >
+        <span>LinkedIn</span>
+      </a><br>
+        or hire me on <a
+        href="https://www.malt.de/profile/moritzphilipphaaf"
+        class="contact-link"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="./assets/malt.png"
+          alt="Malt icon"
+          class="icon contact-icon"
+        >
+        <span>Malt Profile</span>
+      </a>
+      </p>
     </section>
+    
   </main>
 
   <footer>
