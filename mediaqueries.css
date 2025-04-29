@@ -365,12 +365,29 @@
     padding: 0 1rem;
   }
 
+  .logo-itzmore {
+    max-width: 160px;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  #freelance-page .title {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .contact-method {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
   /* Keyframes for mobile typing */
 @keyframes typing-mobile {
   from { width: 0ch; }
   to   { width: 17ch; }
 }
-}
+
 @keyframes blink {
   50% { border-color: transparent; }
 }

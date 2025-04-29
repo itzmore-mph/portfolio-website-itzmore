@@ -22,6 +22,11 @@
     }
   </script>
   <title>Privacy Policy</title>
+  <!-- Favicon -->
+  <link rel="favicon-browser" type="image/png" href="./assets/browser.png"/>
+  <link rel="favicon-iphone" type="image/png" href="./assets/iPhone.png"/>
+  <link rel="favicon-android" type="image/png" href="./assets/Android.png"/>
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
@@ -108,6 +113,51 @@
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav id="desktop-nav" aria-label="Main Navigation">
+    <div class="logo">
+      <div class="full-logo">
+        <h1 class="logo-typewriter">Analyzing the World, One Byte at a Time</h1>
+      </div>
+      <div class="short-logo">
+        <h1 class="logo-typewriter">Analyzing the World</h1>
+      </div>
+    </div>        
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="/freelance.html">Freelance</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="hamburger-menu">
+      <!-- logo -->
+      <div class="logo">
+        <h1 class="logo-typewriter">itzmore.dev</h1>
+      </div>
+      <!-- hamburger icon -->
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <!-- slide‑in menu panel -->
+    <ul class="menu-links">
+      <li><a href="#about"      onclick="toggleMenu()">About</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+      <li><a href="#skills"     onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#projects"   onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
+      <li><a href="/freelance.html" onclick="toggleMenu()">Freelance</a></li>
+      <li><a href="#impressum"  onclick="toggleMenu()">Impressum</a></li>
+      <li><a href="#privacy"    onclick="toggleMenu()">Privacy Policy</a></li>
+    </ul>
+  </nav>
   <section id="privacy">
     <div class="language-toggle">
       <button onclick="toggleLanguage('en')" aria-label="Show Privacy Policy in English" aria-pressed="true">English</button>
@@ -205,5 +255,43 @@
       activeBtn.setAttribute('aria-pressed', 'true');
     }
   </script>
+  <footer>
+    <nav class="footer-nav">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="freelance.html">Freelance</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li class="privacy"><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <a href="#" id="manage-cookies">Manage Cookie Preferences</a>
+    <div class="copy">
+      <p>© <span id="year"></span> Moritz Philipp Haaf<br>All Rights Reserved</p>
+    </div>
+  </footer>
+  <div
+  id="cookie-consent-banner"
+  style="
+    display:none;">
+  We use cookies to improve your experience and for analytics.
+  <button
+    id="accept-cookies"
+    style="margin-left:1rem; padding:0.5rem 1rem;"
+  >
+    Accept
+  </button>
+  <button
+    id="decline-cookies"
+    style="margin-left:.5rem; padding:0.5rem 1rem;"
+  >
+    Decline
+  </button>
+</div> 
+  <script src="script.js"></script>
+</main>
 </body>
 </html>

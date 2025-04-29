@@ -5,29 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Freelance services by Moritz Philipp Haaf — Sports Analytics, Data Dashboards, and Business Intelligence solutions.">
   <title>Freelance | Moritz Philipp Haaf</title>
+  <!-- Favicon -->
+  <link rel="favicon-browser" type="image/png" href="./assets/browser.png"/>
+  <link rel="favicon-iphone" type="image/png" href="./assets/iPhone.png"/>
+  <link rel="favicon-android" type="image/png" href="./assets/Android.png"/>
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-  <nav id="desktop-nav">
-    <div class="logo">
-      <h1 class="logo-typewriter">itzmore.dev</h1>
-    </div>
+  <!-- Navigation -->
+  <nav id="desktop-nav" aria-label="Main Navigation">
+      <div class="logo">
+        <h1 class="logo-typewriter">itzmore.dev</h1>
+      </div>     
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="freelance.html" class="active">Freelance</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="/freelance.html">Freelance</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="hamburger-menu">
+      <!-- logo -->
+      <div class="logo">
+        <h1 class="logo-typewriter">itzmore.dev</h1>
+      </div>
+      <!-- hamburger icon -->
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <!-- slide‑in menu panel -->
+    <ul class="menu-links">
+      <li><a href="#about"      onclick="toggleMenu()">About</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+      <li><a href="#skills"     onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#projects"   onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
+      <li><a href="/freelance.html" onclick="toggleMenu()">Freelance</a></li>
+      <li><a href="#impressum"  onclick="toggleMenu()">Impressum</a></li>
+      <li><a href="#privacy"    onclick="toggleMenu()">Privacy Policy</a></li>
     </ul>
   </nav>
 
   <main id="freelance-page">
-    <h1 class="title">Helping Football Clubs and Businesses Unlock the Power of Data.</h1>
+      <img src="./assets/Black logo - no background.png" alt="Logo itzmore" class="logo-itzmore">
+    <h1 class="title">Helping Football Clubs and Businesses Turn Data into Competitive Advantage</h1>
 
     <section class="section">
       <h2>What I Offer</h2>
-      <ul class="styled-list">
-        <li><strong>Sports Analytics:</strong> Player analysis, team reports, opponent scouting dashboards.</li>
-        <li><strong>Business Dashboards:</strong> Power BI / Tableau dashboards for sales, marketing, and operations.</li>
-      </ul>
+        <ul class="styled-list">
+          <li><strong>Sports Analytics:</strong> Player analysis, match reports, and opponent scouting dashboards tailored for performance insights.</li>
+          <li><strong>Business Dashboards:</strong> Interactive Power BI and Tableau dashboards for sales, marketing, and operational efficiency.</li>
+        </ul>
     </section>
 
     <div class="divider"></div>
@@ -81,39 +118,96 @@
 
     <div class="divider"></div>
 
-    <section class="section">
+    <section class="section why-work-section">
       <h2>Why Work With Me</h2>
       <ul class="styled-list">
-        <li>Passionate about football & analytics.</li>
-        <li>Professional experience in media and IT at Publicis, Red Bull, Sportradar.</li>
-        <li>Fast communication, high-quality work ethic.</li>
+        <li>Enthusiastic about football and analytics, turning insights into impact.</li>
+        <li>Industry experience at top-tier companies like Red Bull, Publicis, and Sportradar.</li>
+        <li>Clear, fast communication and a strong focus on quality execution.</li>
       </ul>
     </section>
 
     <div class="divider"></div>
 
-    <section class="section contact-section">
-      <h2>Contact Me</h2>
-      <div class="contact-info-grid">
-        <a href="mailto:itzmore.dev@gmail.com" class="contact-method" target="_blank">
-          <img src="./assets/email.png" alt="Email" class="icon contact-icon">
-          <span>itzmore.dev@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/moritz-philipp-haaf/" class="contact-method" target="_blank" rel="noopener">
-          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon">
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://www.malt.de/profile/moritzphilipphaaf" class="contact-method" target="_blank" rel="noopener">
-          <img src="./assets/malt.png" alt="Malt Profile" class="icon contact-icon malt-icon">
-          <span>Malt Freelance Platform</span>
-        </a>
-      </div>      
-    </section>    
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-card">
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <a href="mailto:itzmore.dev@gmail.com" class="contact-link">
+              <img
+                src="./assets/email.png"
+                alt="Email icon"
+                class="icon contact-icon email-icon"
+              >
+              <span>itzmore.dev@gmail.com</span>
+            </a>
+          </div>
+          <div class="contact-info-container">
+            <a
+              href="https://www.linkedin.com/in/moritz-philipp-haaf/"
+              class="contact-link"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="./assets/linkedin.png"
+                alt="LinkedIn icon"
+                class="icon contact-icon"
+              >
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="contact-info-container">
+            <a href="https://www.malt.de/profile/moritzphilipphaaf" class="contact-link" target="_blank" rel="noopener">
+              <img src="./assets/malt.png" alt="Malt Profile" class="icon contact-icon malt-icon">
+              <span>Malt Freelance Platform</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>   
     
   </main>
 
   <footer>
-    <p class="copy">&copy; 2025 Moritz Philipp Haaf. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="freelance.html">Freelance</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li class="privacy"><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <a href="#" id="manage-cookies">Manage Cookie Preferences</a>
+    <div class="copy">
+      <p>© <span id="year"></span> Moritz Philipp Haaf<br>All Rights Reserved</p>
+    </div>
   </footer>
+  <div
+  id="cookie-consent-banner"
+  style="
+    display:none;">
+  We use cookies to improve your experience and for analytics.
+  <button
+    id="accept-cookies"
+    style="margin-left:1rem; padding:0.5rem 1rem;"
+  >
+    Accept
+  </button>
+  <button
+    id="decline-cookies"
+    style="margin-left:.5rem; padding:0.5rem 1rem;"
+  >
+    Decline
+  </button>
+</div> 
+  <script src="script.js"></script>
+</main>
 </body>
 </html>
