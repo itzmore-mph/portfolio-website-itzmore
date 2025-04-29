@@ -1265,67 +1265,113 @@ footer .footer-nav .nav-links {
 }
 
 /* =========================
-   FREELANCE LANDING PAGE
+   FREELANCE PAGE STYLING
 ========================= */
 
-/* ===== Freelance Landing Page ===== */
+#freelance-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  line-height: 1.7;
+}
 
-.freelance-header {
+#freelance-page h1 {
   text-align: center;
-  padding: 4rem 2rem 2rem;
-}
-
-.freelance-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #222;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
-.freelance-header p {
-  font-size: 1.2rem;
-  color: #555;
+#freelance-page h2 {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#freelance-page ul {
+  padding-left: 1.5rem;
+  list-style: disc;
   margin-bottom: 2rem;
 }
 
-.services-section {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
+#freelance-page li {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
 }
 
-.services-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
+#freelance-page p {
+  font-size: 1.05rem;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+#freelance-page .section {
+  margin-top: 3rem;
 }
 
-.services-list li {
-  font-size: 1.1rem;
-  color: #555;
-  list-style-type: disc;
-  margin-left: 1.5rem;
+#freelance-page .example-sub {
+  font-size: 0.95rem;
+  color: #666;
 }
 
-.contact-section {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.contact-section a {
-  font-size: 1.2rem;
-  font-weight: bold;
+#freelance-page .email-link {
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0.5rem;
   color: black;
   text-decoration: underline;
 }
 
-.contact-section a:hover {
+#freelance-page .email-link:hover {
   color: black;
+}
+
+#freelance-page .divider {
+  height: 1px;
+  background: #eee;
+  margin: 3rem 0;
+}
+
+.project-summary {
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+}
+
+.project-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.more-projects-coming {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #777;
+  font-size: 1rem;
 }
