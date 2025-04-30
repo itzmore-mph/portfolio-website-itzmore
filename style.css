@@ -184,6 +184,7 @@ nav { /* Dark background for contrast */
     max-height: 36px;
     display: block;
     margin-left: 1rem;
+    align-self: center;
   }
   
 

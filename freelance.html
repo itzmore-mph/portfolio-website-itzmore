@@ -72,12 +72,13 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <nav id="hamburger-nav">
+  <nav id="hamburger-nav" aria-label="Mobile Navigation">
     <div class="hamburger-menu">
       <!-- logo -->
       <div class="logo">
-        <img src="./assets/itzmore-black-logo.png" alt="itzmore logo" class="itzmore-logo">
-      </div> 
+        <img src="./assets/itzmore-black-logo.png" alt="itzmore logo" class="mobile-logo" />
+      </div>
+  
       <!-- hamburger icon -->
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
@@ -92,11 +93,11 @@
       <li><a href="/index.html#experience" onclick="toggleMenu()">Experience</a></li>
       <li><a href="/index.html#skills"     onclick="toggleMenu()">Skills</a></li>
       <li><a href="/index.html#projects"   onclick="toggleMenu()">Projects</a></li>
-      <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
-      <li><a href="#freelance" onclick="toggleMenu()">Freelance</a></li>
-
+      <li><a href="/index.html#contact"    onclick="toggleMenu()">Contact</a></li>
+      <li><a href="/freelance.html"        onclick="toggleMenu()">Freelance</a></li>
     </ul>
   </nav>
+  
 
   <main id="freelance-page">
     <h1 class="title">Helping Football Clubs and Businesses Turn Data into Competitive Advantage</h1>
@@ -250,6 +251,5 @@
   </button>
 </div> 
   <script src="script.js"></script>
-</main>
 </body>
 </html>

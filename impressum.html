@@ -10,6 +10,7 @@
   <link rel="icon" sizes="192x192" href="./assets/Android.png">  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
     body { font-family: 'Poppins', sans-serif; color: #333; margin:0; padding:0; }
@@ -33,12 +34,12 @@
   </style>
 </head>
 <body>
+  <main>
   <!-- Navigation -->
   <nav id="desktop-nav" aria-label="Main Navigation">
     <div class="logo">
       <img src="./assets/itzmore-black-logo.png" alt="itzmore logo" class="itzmore-logo">
     </div>        
-    <ul class="nav-links">
       <ul class="nav-links">
         <li><a href="/index.html#about">About</a></li>
         <li><a href="/index.html#experience">Experience</a></li>
@@ -47,14 +48,14 @@
         <li><a href="/index.html#contact">Contact</a></li>
         <li><a href="/freelance.html">Freelance</a></li>
       </ul>
-    </ul>
   </nav>
-  <nav id="hamburger-nav">
+  <nav id="hamburger-nav" aria-label="Mobile Navigation">
     <div class="hamburger-menu">
       <!-- logo -->
       <div class="logo">
-        <h1 class="logo-typewriter">itzmore.dev</h1>
+        <img src="./assets/itzmore-black-logo.png" alt="itzmore logo" class="mobile-logo" />
       </div>
+  
       <!-- hamburger icon -->
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
@@ -70,9 +71,9 @@
       <li><a href="/index.html#skills"     onclick="toggleMenu()">Skills</a></li>
       <li><a href="/index.html#projects"   onclick="toggleMenu()">Projects</a></li>
       <li><a href="/index.html#contact"    onclick="toggleMenu()">Contact</a></li>
-      <li><a href="/freelance.html" onclick="toggleMenu()">Freelance</a></li>
+      <li><a href="/freelance.html"        onclick="toggleMenu()">Freelance</a></li>
     </ul>
-  </nav>
+  </nav> 
   <section id="imprint">
     <div class="language-toggle">
       <button onclick="toggleLanguage('en')" aria-pressed="true">English</button>
@@ -130,6 +131,7 @@
       location.reload();
     });
   </script>
+  </main> 
   <footer>
     <nav class="footer-nav">
       <ul class="nav-links">
@@ -165,8 +167,8 @@
   >
     Decline
   </button>
-</div> 
+</div>
+
   <script src="script.js"></script>
-</main>
 </body>
 </html>
