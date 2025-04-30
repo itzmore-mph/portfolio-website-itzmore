@@ -116,8 +116,9 @@
     height: auto;
   }
 
-  .about-containers {
-    margin-top: 0;
+    .about-containers {
+      margin-top: 0;
+    }
   }
 
 /* 768px and below */
@@ -125,7 +126,7 @@
   #projects .project-card {
     margin: 2rem 1rem;
     max-width: none;
-    padding: 1rem;
+    padding: var(--space-sm);
   }
 
   #projects .project-card .project-img-container {
@@ -158,7 +159,7 @@
   }
 
   .btn {
-    width: 90%;
+    width: 100%;
     max-width: 300px;
     text-align: center;
   }

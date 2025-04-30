@@ -9,11 +9,17 @@
   --primary-color: #333;
   --accent-color: #0077cc;
   --text-color: #444;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 3rem;
-}
+  /* Spacing scale */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 2rem;     /* 32px */
+  --space-lg: 4rem;     /* 64px */
+  --space-xl: 6rem;     /* 96px */
+  --space-xxl: 8rem;    /* 128px */
+  /* Section padding defaults */
+  --section-padding-y: var(--space-lg);
+  --section-padding-x: var(--space-sm);
+  }
 
 * {
   margin: 0;
@@ -411,7 +417,7 @@ button:focus {
 ========================= */
 
 section {
-  padding: var(--space-lg) var(--space-sm);
+  padding: var(--section-padding-y) var(--section-padding-x);
   scroll-snap-align: start;
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -1411,7 +1417,6 @@ footer .footer-nav .nav-links {
 #freelance-page .styled-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: justify;
   list-style-position: inside;
   padding-left: 0;
