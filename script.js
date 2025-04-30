@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typewriter logo
   if (logoTyper) {
     logoTyper.textContent = "Analyzing the World, One Byte at a Time";
+    logoTyper.classList.remove("typewriter-profile"); // reset
+    void logoTyper.offsetWidth; // force reflow
+    logoTyper.classList.add("typewriter-profile"); // re-trigger
   }
 
   // Rotating taglines

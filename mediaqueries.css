@@ -201,6 +201,15 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .full-typewriter {
+    display: none !important;
+  }
+
+  .short-typewriter {
+    display: block !important;
+  }
+  
   .full-logo { display: none; }
   .short-logo { display: inline; }
 }

@@ -168,42 +168,50 @@ nav { /* Dark background for contrast */
     background: white;       /* ensure it covers what’s behind */
   } 
   /* Logo Styling */
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 500;
-    white-space: nowrap;
-    color: #333;
-    letter-spacing: 0.5px;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-left: 0.5rem;
-  }
-
-  .logo-typewriter {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #333;
-    width: 0;
-    animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  .itzmore-logo {
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
   }
   
-  @keyframes blink {
-    50% { border-color: transparent; }
+
+  .typewriter-profile {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--text-color);
+    width: 0;
+    margin: 1.5rem auto 2rem;
+    text-align: center;
+    max-width: 100%;
   }
 
-  .short-logo { display: none; }
-@media (max-width: 768px) {
-  .full-logo { display: none; }
-  .short-logo { display: inline; }
+  .full-typewriter {
+    display: block;
+    animation: typing-full 3.5s steps(38, end) forwards, blink 0.75s step-end infinite;
+  }
+
+  .short-typewriter {
+    display: none;
+    animation: typing-short 2.5s steps(17, end) forwards, blink 0.75s step-end infinite;
+  }
+  
+  
+/* Keyframes */
+@keyframes typing-full {
+  from { width: 0; }
+  to   { width: 38ch; }
+}
+
+@keyframes typing-short {
+  from { width: 0; }
+  to   { width: 17ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
   
@@ -496,6 +504,14 @@ section {
     flex-wrap: wrap;
   }
 
+  .profile-img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
   .section__text {
     max-width: 500px;
     text-align: center;
@@ -534,6 +550,14 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
 }
 
 #socials-container {
@@ -650,7 +674,8 @@ section {
   .about-img {
     width: 100%;
     max-width: 300px;
-    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
