@@ -188,13 +188,40 @@
     margin-bottom: 2rem;
   }
 
+  .about-containers {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
   .section__pic-container {
-    width: 80%;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem;
+  }
+
+  .about-text {
+    max-width: 90%;
+    margin: 0 auto 1.5rem;
+  }
+
+  .experience-card,
+  .education-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 1rem;
   }
 
   .section__text {
     width: 90%;
+  }
+
+  .contact-info-upper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .tagline {
@@ -241,6 +268,18 @@
   .section-heading h1,
   .title {
     font-size: 2.25rem;
+  }
+  
+  .contact-info-upper-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .contact-info-container {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .section-heading .subtitle {
