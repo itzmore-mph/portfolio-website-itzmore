@@ -44,12 +44,6 @@
   }
 }
 
-/* 1204px */
-@media screen and (min-width: 1024px) {
-  section {
-    padding: var(--space-xl) 0;
-  }
-}
 
 /* 1200px and below */
 @media screen and (max-width: 1200px) {

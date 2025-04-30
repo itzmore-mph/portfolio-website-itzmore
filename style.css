@@ -188,38 +188,49 @@ nav { /* Dark background for contrast */
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid var(--text-color);
-    width: 0;
-    margin: 1.5rem auto 2rem;
     text-align: center;
     max-width: 100%;
   }
-
-  .full-typewriter {
-    display: block;
-    animation: typing-full 3.5s steps(38, end) forwards, blink 0.75s step-end infinite;
+  
+  .typewriter-profile.full-typewriter {
+    display: inline-block;
+    width: 0;
+    animation: typing-full 3.5s steps(28, end) forwards, blink 0.75s step-end infinite;
   }
-
-  .short-typewriter {
+  
+  .typewriter-profile.short-typewriter {
     display: none;
+    width: 0;
     animation: typing-short 2.5s steps(17, end) forwards, blink 0.75s step-end infinite;
   }
   
+  /* Keyframes */
+  @keyframes typing-full {
+    from { width: 0ch; }
+    to   { width: 32ch; }
+  }
   
-/* Keyframes */
-@keyframes typing-full {
-  from { width: 0; }
-  to   { width: 38ch; }
-}
-
-@keyframes typing-short {
-  from { width: 0; }
-  to   { width: 17ch; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
+  @keyframes typing-short {
+    from { width: 0ch; }
+    to   { width: 16ch; }
+  }
+  
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50%      { border-color: var(--text-color); }
+  }
+  
+  /* Desktop */
+  @media screen and (min-width: 769px) {
+    .full-typewriter { display: inline; }
+    .short-typewriter { display: none !important; }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    .full-typewriter { display: none !important; }
+    .short-typewriter { display: inline-block !important; }
+  }
   
   /* Navigation Links */
   .nav-links {
