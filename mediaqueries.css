@@ -2,6 +2,15 @@
    RESPONSIVE LAYOUT
 =========================== */
 
+/* Default: show full, hide short */
+.full-typewriter {
+  display: inline;
+}
+
+.short-typewriter {
+  display: none;
+}
+
 /* 1400px and below */
 @media screen and (max-width: 1400px) {
   .about-containers {
@@ -12,6 +21,7 @@
   #projects {
     height: auto;
   }
+
 
   .profile-container {
     flex-direction: column;
@@ -31,6 +41,13 @@
 
   #profile {
     padding: 3rem 1rem;
+  }
+}
+
+/* 1204px */
+@media screen and (min-width: 1024px) {
+  section {
+    padding: var(--space-xl) 0;
   }
 }
 
@@ -71,14 +88,6 @@
     flex: 1 1 auto;
   }
 
-  .full-logo {
-    display: none !important;
-  }
-
-  .short-logo {
-    display: block !important;
-  }
-
   #hamburger-nav .short-logo .logo-typewriter {
     display: inline-block;
     width: 0ch;
@@ -116,9 +125,6 @@
   .about-containers {
     margin-top: 0;
   }
-}
-
-
 
 /* 768px and below */
 @media screen and (max-width: 768px) {
@@ -202,16 +208,33 @@
     margin-bottom: 1rem;
   }
 
-  .full-typewriter {
-    display: none !important;
+  .full-typewriter { display: none !important; }
+  .short-typewriter {
+    display: inline !important;
+    animation: typing-mobile 2s steps(17, end) forwards, blink 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
   }
 
-  .short-typewriter {
-    display: block !important;
-  }
-  
-  .full-logo { display: none; }
-  .short-logo { display: inline; }
+.full-logo {
+  display: none !important;
+}
+
+.short-logo {
+  display: block !important;
+}
+}
+
+
+/* Mobile-only typewriter animation */
+@keyframes typing-mobile {
+  from { width: 0ch; }
+  to   { width: 17ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 /* 600px and below */
@@ -390,13 +413,4 @@
     align-items: center;
     text-align: center;
   }
-}
-  /* Keyframes for mobile typing */
-@keyframes typing-mobile {
-  from { width: 0ch; }
-  to   { width: 17ch; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
 }

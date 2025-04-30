@@ -173,6 +173,12 @@ nav { /* Dark background for contrast */
     object-fit: contain;
     cursor: pointer;
   }
+
+  .mobile-logo {
+    max-height: 36px;
+    display: block;
+    margin-left: 1rem;
+  }
   
 
   .typewriter-profile {
@@ -396,6 +402,8 @@ button:focus {
 section {
   padding: var(--space-lg) var(--space-sm);
   scroll-snap-align: start;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .section-container {
@@ -428,7 +436,7 @@ section {
   font-size: 2.5rem;
   font-weight: 700;
   color: #222;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -484,11 +492,11 @@ section {
 ========================= */
 
 #profile {
-    text-align: center;
-    height: auto;
-    padding: 4rem;
-    position: relative;
-  }
+  text-align: center;
+  height: auto;
+  padding: var(--space-lg) var(--space-sm); /* Match section */
+  position: relative;
+}
 
 #profile h1,
 #profile .logo-typewriter {
@@ -605,6 +613,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .btn {
@@ -643,10 +652,6 @@ section {
 .btn-color-2:hover {
   background-color: #f0f0f0;
   color: #000;
-}
-
-.btn-container {
-  gap: 1rem;
 }
 
 /* =========================
@@ -1396,6 +1401,7 @@ footer .footer-nav .nav-links {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: justify;
   list-style-position: inside;
   padding-left: 0;
   margin: 0 auto;
