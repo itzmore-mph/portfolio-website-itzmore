@@ -240,11 +240,11 @@
 
   <script>
     function toggleLanguage(lang) {
-      document.querySelectorAll('.language-content').forEach(el => el.classList.remove('active'));
-      document.getElementById(`imprint-${lang}`).classList.add('active');
-      document.querySelectorAll('.language-toggle button').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
-      document.querySelector(`.language-toggle button[onclick*="'${lang}'"]`).setAttribute('aria-pressed', 'true');
-    }
+  document.querySelectorAll('.language-content').forEach(el => el.classList.remove('active'));
+  document.getElementById(`privacy-${lang}`).classList.add('active');
+  document.querySelectorAll('.language-toggle button').forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+  document.querySelector(`.language-toggle button[onclick*="'${lang}'"]`).setAttribute('aria-pressed', 'true');
+}
 
     document.getElementById('manage-cookies').addEventListener('click', e => {
       e.preventDefault();
