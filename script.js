@@ -116,22 +116,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // —— LANGUAGE SWITCHER ——  
   window.toggleLanguage = lang => {
-    // Directly access the elements for both privacy and imprint
+    // Toggle privacy policy sections
     const privacyEn = document.getElementById("privacy-en");
     const privacyDe = document.getElementById("privacy-de");
-    const imprintEn = document.getElementById("imprint-en");
-    const imprintDe = document.getElementById("imprint-de");
-  
-    // Toggle visibility for privacy sections
     if (privacyEn && privacyDe) {
       privacyEn.style.display = lang === "en" ? "block" : "none";
       privacyDe.style.display = lang === "de" ? "block" : "none";
     }
   
-    // Toggle visibility for imprint sections
+    // Toggle imprint sections
+    const imprintEn = document.getElementById("imprint-en");
+    const imprintDe = document.getElementById("imprint-de");
     if (imprintEn && imprintDe) {
       imprintEn.style.display = lang === "en" ? "block" : "none";
       imprintDe.style.display = lang === "de" ? "block" : "none";
+    }
+  
+    // Toggle cookie consent banner language
+    const cookieEn = document.getElementById("cookie-text-en");
+    const cookieDe = document.getElementById("cookie-text-de");
+    if (cookieEn && cookieDe) {
+      cookieEn.style.display = lang === "en" ? "block" : "none";
+      cookieDe.style.display = lang === "de" ? "block" : "none";
     }
   };
 
