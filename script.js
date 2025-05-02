@@ -172,59 +172,65 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// —— Consent Opt‑in & GA loader —— 
-(function() {
-  const banner   = document.getElementById('cookie-consent-banner');
-  const accepted = localStorage.getItem('cookieConsent');
-  const GA_ID    = 'G-QKQ0F9HJ5M';  // use the normal ASCII hyphen!
+// —— Consent Opt-in & GA loader (Multilingual) —— 
+(function () {
+  const banner     = document.getElementById('cookie-consent-banner');
+  const acceptBtn  = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+  const manageBtn  = document.getElementById('manage-cookies');
+  const GA_ID      = 'G-QKQ0F9HJ5M'; // Replace with your actual GA ID
+  const consent    = localStorage.getItem('cookieConsent');
+  const lang       = navigator.language || navigator.userLanguage;
+
+  // Language toggle
+  if (lang.startsWith('de')) {
+    document.getElementById('cookie-text-en')?.style.setProperty('display', 'none');
+    document.getElementById('cookie-text-de')?.style.setProperty('display', 'block');
+  } else {
+    document.getElementById('cookie-text-en')?.style.setProperty('display', 'block');
+    document.getElementById('cookie-text-de')?.style.setProperty('display', 'none');
+  }
 
   function initGA() {
-    // 1) load the library
-    const s1 = document.createElement('script');
-    s1.async = true;
-    s1.src   = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(s1);
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
 
-    // 2) set up dataLayer & gtag()
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){ dataLayer.push(arguments); };
+    window.gtag = function () { dataLayer.push(arguments); };
 
-    // 3) initialize with IP anonymization
     gtag('js', new Date());
     gtag('config', GA_ID, {
-      'anonymize_ip': true,
-      'page_path': window.location.pathname
+      anonymize_ip: true,
+      page_path: window.location.pathname
     });
   }
 
-  // show banner if no choice yet
-  if (!accepted) banner.style.display = 'block';
-
-  document.getElementById('accept-cookies').onclick = () => {
-    localStorage.setItem('cookieConsent','accepted');
-    banner.style.display = 'none';
-    initGA();
-  };
-  document.getElementById('decline-cookies').onclick = () => {
-    localStorage.setItem('cookieConsent','declined');
-    banner.style.display = 'none';
-  };
-
-  // if they already accepted on a previous visit, fire GA now
-  if (accepted === 'accepted') {
+  if (!consent) {
+    banner.style.display = 'block';
+  } else if (consent === 'accepted') {
     initGA();
   }
-  const manageBtn = document.getElementById('manage-cookies');
-  if (manageBtn) {
-    manageBtn.addEventListener('click', e => {
-      e.preventDefault();
-      localStorage.removeItem('cookieConsent');
-      // either reload, or just show the banner in place:
-      // location.reload();
-      banner.style.display = 'block';
-    });
-  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.style.display = 'none';
+    initGA();
+  });
+
+  declineBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    banner.style.display = 'none';
+  });
+
+  manageBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.removeItem('cookieConsent');
+    banner.style.display = 'block';
+  });
 })();
+
 
 // —— Current Year Function - Copyright —— 
 document.getElementById('year').textContent = new Date().getFullYear();

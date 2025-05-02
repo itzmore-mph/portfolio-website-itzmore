@@ -410,14 +410,15 @@
   .title {
     font-size: 2rem;
   }
-
-  #manage-cookies {
+  
+  #cookie-consent-banner {
+    font-size: 0.85rem;
     padding: 1rem;
   }
 
-  #cookie-consent-banner {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  #cookie-consent-banner button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 
   .section__text {
