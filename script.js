@@ -55,8 +55,7 @@ const textsDesktop = [
 
 const textsMobile = [
   "Analyzing the World.",
-  "Data Meets Football.",
-  "Python + Insights."
+  "Data Meets Football."
 ];
 
 let i = 0;

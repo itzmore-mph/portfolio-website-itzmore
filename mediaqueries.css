@@ -1,7 +1,6 @@
 /* ===========================
    RESPONSIVE LAYOUT
 =========================== */
-
 /* 1400px and below */
 @media screen and (max-width: 1400px) {
   .about-containers {
@@ -220,15 +219,6 @@
     margin-bottom: 1rem;
   }
 
-  .full-typewriter { display: none !important; }
-  .short-typewriter {
-    display: inline !important;
-    animation: typing-mobile 2s steps(17, end) forwards, blink 0.75s step-end infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid;
-  }
-
 .full-logo {
   display: none !important;
 }
@@ -266,8 +256,6 @@
 
 /* 600px and below */
 @media screen and (max-width: 600px) {
-  #tagline-desktop { display: none; }
-  #tagline-mobile  { display: inline-block; }
   .container {
     padding: 0 1.5rem;
   }

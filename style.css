@@ -189,53 +189,44 @@ nav { /* Dark background for contrast */
   
   .typewriter-profile {
     display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #333;
-    max-width: 100%;
   }
 
   .full-typewriter {
-    animation: typing-full 5s steps(40, end) forwards, blink 0.75s step-end infinite;
+    width: 0ch;
+    animation:
+      typing-full 5s steps(40,end) forwards,
+      blink 0.75s step-end infinite;
   }
 
   .short-typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid;
-    animation: typing-short 6s steps(20, end) forwards, blink 0.75s step-end infinite;
+    width: 0ch;
+    animation:
+      typing-short 3s steps(20,end) forwards,
+      blink 0.75s step-end infinite;
+  }
+
+/* keyframes */
+@keyframes typing-full  { from { width: 0ch; } to { width: 32ch; } }
+@keyframes typing-short { from { width: 0ch; } to { width: 17ch; } }
+@keyframes blink {
+  0%,100% { border-color: transparent; }
+  50%     { border-color: currentColor;   }
 }
 
-  @keyframes typing-full {
-    from { width: 0ch; }
-    to   { width: 40ch; }
-  }
+@media (min-width: 769px) {
+  #tagline-desktop { display: inline-block; }
+  #tagline-mobile  { display: none;         }
+}
+@media (max-width: 768px) {
+  #tagline-desktop { display: none;         }
+  #tagline-mobile  { display: inline-block; }
+}
 
-  @keyframes typing-short {
-    from { width: 0ch; }
-    to   { width: 20ch; }
-  }
-
-  @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50%      { border-color: #333; }
-  }
-
-  @media screen and (min-width: 769px) {
-    #tagline-desktop { display: inline-block; }
-    #tagline-mobile  { display: none; }
-  }
-
-  
-  /* Mobile */
-  @media screen and (max-width: 768px) {
-    .full-typewriter { display: none !important; }
-    .short-typewriter { display: inline-block !important; }
-  }
-  
   /* Navigation Links */
   .nav-links {
     list-style: none;
@@ -525,6 +516,7 @@ section {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    padding: var(--section-padding-y) var(--section-padding-x);
   }
 
   .profile-img {
