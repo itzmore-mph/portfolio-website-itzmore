@@ -1228,16 +1228,24 @@ CONTACT SECTION
   transform: scale(1.1); /* Subtle hover effect */
 }
 
-.email-icon {
-  height: 2.2rem !important; /* match all icons */
-  width: 2.2rem !important;
+.contact-icon {
+  object-fit: contain;
+  display: inline-block;
 }
 
-.contact-icon.malt-icon {
+.icon.contact-icon.email-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.icon.contact-icon.malt-icon {
+  width: 4rem;
+  height: 4rem;
   padding: 0 !important;
   border-radius: 0;
   background: none;
 }
+
 
 /* Optional: Reduce bottom margin before footer */
 #contact + footer {
@@ -1324,7 +1332,6 @@ footer .footer-nav .nav-links {
 #freelance-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 2rem;
   font-family: "Poppins", sans-serif;
   color: var(--text-color);
   line-height: 1.7;
@@ -1366,13 +1373,6 @@ footer .footer-nav .nav-links {
 
 #freelance-page .section {
   margin-top: 3rem;
-}
-
-#freelance-page .divider {
-  height: 1px;
-  background: #eee;
-  margin: 3rem 0;
-  width: 90%;
 }
 
 #freelance-page .example-sub {

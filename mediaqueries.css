@@ -246,6 +246,10 @@
   display: block !important;
 }
 
+#contact {
+  padding-bottom: 1rem;
+}
+
 .contact-card {
   width: 100%;
   max-width: 90%;
