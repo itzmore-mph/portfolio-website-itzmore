@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerIcon  = document.querySelector(".hamburger-icon");
   const navBar         = document.querySelector("nav");
   const logoTyper      = document.querySelector(".logo-typewriter");
-  const taglineEl      = document.getElementById("tagline");
+  const taglineDesktop = document.getElementById("tagline-desktop");
+  const taglineMobile = document.getElementById("tagline-mobile");  
   const backToTopBtn   = document.getElementById("back-to-top");
   const sectionArrows  = document.querySelectorAll(".section-arrow");
   const imprintEn      = document.getElementById("imprint-en");
@@ -41,21 +42,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Rotating taglines
   (function startTaglineRotation() {
-    const texts = [
+    const textsDesktop = [
       "The Beautiful Game,<br>Explained with Data.",
       "Powered by Python.<br>Inspired by Football."
     ];
+  
+    const textsMobile = [
+      "Explained with Data",
+      "Python & Football"
+    ];
+  
     let i = 0;
-
-    // Show the first tagline immediately
-    if (taglineEl) taglineEl.innerHTML = texts[0];
-
+  
+    // Set initial content
+    if (taglineDesktop) taglineDesktop.innerHTML = textsDesktop[0];
+    if (taglineMobile) taglineMobile.innerHTML = textsMobile[0];
+  
     setInterval(() => {
-      if (!taglineEl) return;
-      fade(taglineEl, () => {
-        i = (i + 1) % texts.length;
-        taglineEl.innerHTML = texts[i];
-      });
+      i = (i + 1) % textsDesktop.length;
+  
+      if (taglineDesktop) {
+        fade(taglineDesktop, () => {
+          taglineDesktop.innerHTML = textsDesktop[i];
+        });
+      }
+  
+      if (taglineMobile) {
+        fade(taglineMobile, () => {
+          taglineMobile.innerHTML = textsMobile[i];
+        });
+      }
     }, 4000);
   })();
 
