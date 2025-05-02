@@ -222,7 +222,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const acceptBtn  = document.getElementById('accept-cookies');
   const declineBtn = document.getElementById('decline-cookies');
   const manageBtn  = document.getElementById('manage-cookies');
-  const GA_ID      = 'G-QKQ0F9HJ5M'; // Replace with your actual GA ID
+  const GA_ID      = 'G-65F9PL28LL';
   const consent    = localStorage.getItem('cookieConsent');
   const lang       = navigator.language || navigator.userLanguage;
 
