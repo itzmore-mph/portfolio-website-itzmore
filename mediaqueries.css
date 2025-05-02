@@ -218,7 +218,6 @@
   }
 
   .contact-info-upper-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -246,6 +245,17 @@
 .short-logo {
   display: block !important;
 }
+
+.contact-card {
+  width: 100%;
+  max-width: 90%;
+}
+.contact-link {
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
 }
 
 
