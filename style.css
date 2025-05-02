@@ -1386,14 +1386,6 @@ footer .footer-nav .nav-links {
   color: #666;
 }
 
-#freelance-page .email-link {
-  display: inline-block;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  color: black;
-  text-decoration: underline;
-}
-
 #freelance-page .email-link:hover {
   color: black;
 }
@@ -1450,67 +1442,4 @@ footer .footer-nav .nav-links {
   padding: 2rem;
   margin-bottom: 2rem;
   background: #fff;
-}
-
-.contact-info-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.contact-method {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.1rem;
-}
-
-.contact-method img {
-  margin-right: 0.5rem;
-}
-
-.contact-method:hover {
-  text-decoration: underline;
-}
-
-.contact-icon {
-  width: 2.2rem;
-  height: 2.2rem;
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.2s ease-in-out;
-}
-
-.contact-icon,
-.icon,
-.email-icon,
-.contact-icon.malt-icon {
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 !important;
-  background: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.email-icon {
-  padding: 0 !important;
-  background: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  width: 2.8rem !important;
-  height: 2.8rem !important;
-}
-
-.malt-icon {
-  padding: 0 !important;
-  background: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  width: 4rem !important;
-  height: 4rem !important;
 }
