@@ -688,12 +688,6 @@ section {
     flex-wrap: wrap;
   }
   
-  .about-left {
-    flex: 1 1 300px;
-    display: flex;
-    justify-content: center;
-  }
-  
   .about-img {
     width: 100%;
     max-width: 300px;
@@ -1435,8 +1429,7 @@ footer .footer-nav .nav-links {
 }
 
 .project-card,
-.section,
-.contact-section {
+.section {
   box-shadow: 0 4px 16px rgba(0,0,0,0.03);
   border-radius: 12px;
   padding: 2rem;
