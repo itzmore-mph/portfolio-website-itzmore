@@ -45,43 +45,58 @@ document.addEventListener("DOMContentLoaded", () => {
   body.classList.remove("menu-open");
   menuLinks?.classList.remove("open");
   hamburgerIcon?.classList.remove("open");
+ 
+// —— Rotating taglines ——  
+const textsDesktop = [
+  "Analyzing the World, One Byte at a Time.",
+  "The Beautiful Game, Explained with Data.",
+  "Powered by Python. Inspired by Football."
+];
 
-  // Rotating taglines
-  (function startTaglineRotation() {
-    const textsDesktop = [
-      "Analyzing the World, One Byte at a Time."
-      "The Beautiful Game, Explained with Data.",
-      "Powered by Python. Inspired by Football."
-    ];
-  
-    const textsMobile = [
-      "Analyzing the World.",
-      "The Beautiful Game."
-    ];
-  
-    let i = 0;
-  
-    // Set initial content
-    if (taglineDesktop) taglineDesktop.innerHTML = textsDesktop[0];
-    if (taglineMobile) taglineMobile.innerHTML = textsMobile[0];
-  
-    setInterval(() => {
-      i = (i + 1) % textsDesktop.length;
-    
-      if (taglineDesktop) {
-        fade(taglineDesktop, () => {
-          taglineDesktop.innerHTML = textsDesktop[i];
-          retriggerTypingAnimation(taglineDesktop, 'full-typewriter');
-        });
-      }
-    
-      if (taglineMobile) {
-        fade(taglineMobile, () => {
-          taglineMobile.innerHTML = textsMobile[i];
-          retriggerTypingAnimation(taglineMobile, 'short-typewriter');
-        });
-      }
-    }, 4000);
+const textsMobile = [
+  "Analyzing the World.",
+  "Data Meets Football.",
+  "Python + Insights."
+];
+
+let i = 0;
+
+function retriggerTypingAnimation(el, animationClass) {
+  // Fully reset animation to ensure retrigger
+  el.style.animation = "none";     // clear inline animation
+  el.offsetHeight;                 // trigger reflow
+  el.style.animation = "";         // reset inline animation
+  el.classList.remove(animationClass); 
+  void el.offsetWidth;             // another reflow (for consistency)
+  el.classList.add(animationClass);
+}
+
+// Initial text + animation
+if (taglineDesktop) {
+  taglineDesktop.textContent = textsDesktop[0];
+  retriggerTypingAnimation(taglineDesktop, "full-typewriter");
+}
+
+if (taglineMobile) {
+  taglineMobile.textContent = textsMobile[0];
+  retriggerTypingAnimation(taglineMobile, "short-typewriter");
+}
+
+// Rotate every 8500ms
+setInterval(() => {
+  i = (i + 1) % textsDesktop.length;
+
+  if (taglineDesktop) {
+    taglineDesktop.textContent = textsDesktop[i];
+    retriggerTypingAnimation(taglineDesktop, "full-typewriter");
+  }
+
+  if (taglineMobile) {
+    taglineMobile.textContent = textsMobile[i];
+    retriggerTypingAnimation(taglineMobile, "short-typewriter");
+  }
+}, 8500);
+
 
   // —— SCROLL HANDLING (throttled) ——  
   window.addEventListener("scroll", () => {

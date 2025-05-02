@@ -2,15 +2,6 @@
    RESPONSIVE LAYOUT
 =========================== */
 
-/* Default: show full, hide short */
-.full-typewriter {
-  display: inline;
-}
-
-.short-typewriter {
-  display: none;
-}
-
 /* 1400px and below */
 @media screen and (max-width: 1400px) {
   .about-containers {
@@ -275,6 +266,8 @@
 
 /* 600px and below */
 @media screen and (max-width: 600px) {
+  #tagline-desktop { display: none; }
+  #tagline-mobile  { display: inline-block; }
   .container {
     padding: 0 1.5rem;
   }

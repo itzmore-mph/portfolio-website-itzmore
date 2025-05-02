@@ -187,51 +187,48 @@ nav { /* Dark background for contrast */
     align-self: center;
   }
   
-
   .typewriter-profile {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--text-color);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid var(--text-color);
-    text-align: center;
+    border-right: 2px solid #333;
     max-width: 100%;
   }
-  
-  .typewriter-profile.full-typewriter {
-    display: inline-block;
-    width: 0;
-    animation: typing-full 3.5s steps(28, end) forwards, blink 0.75s step-end infinite;
+
+  .full-typewriter {
+    animation: typing-full 5s steps(40, end) forwards, blink 0.75s step-end infinite;
   }
-  
-  .typewriter-profile.short-typewriter {
-    display: none;
-    width: 0;
-    animation: typing-short 2.5s steps(17, end) forwards, blink 0.75s step-end infinite;
-  }
-  
-  /* Keyframes */
+
+  .short-typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    animation: typing-short 6s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+
   @keyframes typing-full {
     from { width: 0ch; }
-    to   { width: 32ch; }
+    to   { width: 40ch; }
   }
-  
+
   @keyframes typing-short {
     from { width: 0ch; }
-    to   { width: 16ch; }
+    to   { width: 20ch; }
   }
-  
+
   @keyframes blink {
     0%, 100% { border-color: transparent; }
-    50%      { border-color: var(--text-color); }
+    50%      { border-color: #333; }
   }
-  
-  /* Desktop */
+
   @media screen and (min-width: 769px) {
-    .full-typewriter { display: inline; }
-    .short-typewriter { display: none !important; }
+    #tagline-desktop { display: inline-block; }
+    #tagline-mobile  { display: none; }
   }
+
   
   /* Mobile */
   @media screen and (max-width: 768px) {
@@ -517,7 +514,7 @@ section {
 }
 
 #profile h1,
-#profile .logo-typewriter {
+#profile {
     margin-top: 0;
     padding-top: 0;
   }
