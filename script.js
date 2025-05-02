@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  function retriggerTypingAnimation(el, animationClass) {
+    el.classList.remove(animationClass);
+    void el.offsetWidth; // Trigger reflow to restart animation
+    el.classList.add(animationClass);
+  }
+
   // —— INITIAL SETUP ——  
   // Reset menu state
   body.classList.remove("menu-open");
@@ -43,13 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Rotating taglines
   (function startTaglineRotation() {
     const textsDesktop = [
-      "The Beautiful Game,<br>Explained with Data.",
-      "Powered by Python.<br>Inspired by Football."
+      "Analyzing the World, One Byte at a Time."
+      "The Beautiful Game, Explained with Data.",
+      "Powered by Python. Inspired by Football."
     ];
   
     const textsMobile = [
-      "Explained with Data",
-      "Python & Football"
+      "Analyzing the World.",
+      "The Beautiful Game."
     ];
   
     let i = 0;
@@ -60,20 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
   
     setInterval(() => {
       i = (i + 1) % textsDesktop.length;
-  
+    
       if (taglineDesktop) {
         fade(taglineDesktop, () => {
           taglineDesktop.innerHTML = textsDesktop[i];
+          retriggerTypingAnimation(taglineDesktop, 'full-typewriter');
         });
       }
-  
+    
       if (taglineMobile) {
         fade(taglineMobile, () => {
           taglineMobile.innerHTML = textsMobile[i];
+          retriggerTypingAnimation(taglineMobile, 'short-typewriter');
         });
       }
     }, 4000);
-  })();
 
   // —— SCROLL HANDLING (throttled) ——  
   window.addEventListener("scroll", () => {
