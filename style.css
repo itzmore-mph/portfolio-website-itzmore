@@ -193,7 +193,6 @@ nav { /* Dark background for contrast */
     white-space: nowrap;
     border-right: 2px solid currentColor;
     font-size: 1.5rem;
-    font-weight: bold;
   }
 
   .full-typewriter {
@@ -1233,8 +1232,8 @@ CONTACT SECTION
 }
 
 .icon.contact-icon.malt-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 2.2rem;
+  height: 2.2rem;
   padding: 0 !important;
   border-radius: 0;
   background: none;
