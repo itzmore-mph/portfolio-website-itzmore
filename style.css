@@ -956,7 +956,7 @@ PROJECTS SECTION
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   background: white;
-  margin: 5 auto 10rem;
+  margin: 5rem auto 10rem;
 }
 
   .project-img {
@@ -1390,13 +1390,13 @@ footer .footer-nav .nav-links {
 #freelance-page .section p,
 #freelance-page .section li,
 #freelance-page .styled-list li {
-  text-align: justify;
+  text-align:justify;
 }
 
 #freelance-page .styled-list {
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: center;
   list-style-position: inside;
   padding-left: 0;
   margin: 0 auto;
