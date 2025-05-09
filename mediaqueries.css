@@ -476,4 +476,21 @@
     align-items: center;
     text-align: center;
   }
+
+  #privacy {
+    padding: 1rem;
+  }
+
+  #privacy h1 {
+    font-size: 1.75rem;
+  }
+
+  #privacy h2 {
+    font-size: 1.125rem;
+  }
+
+  .language-toggle button {
+    width: 100px;
+    margin-bottom: 0.5rem;
+  }
 }
