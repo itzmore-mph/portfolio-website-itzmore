@@ -995,8 +995,7 @@ PROJECTS SECTION
 .more-projects-coming {
     text-align: center;
     margin-top: 2rem;
-    font-style: italic;
-    color: #555;
+    color: black
     font-size: 2rem;
     opacity: 0.85;
   }
