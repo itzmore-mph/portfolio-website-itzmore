@@ -996,7 +996,7 @@ PROJECTS SECTION
     text-align: center;
     margin-top: 2rem;
     color: black;
-    font-size: 2rem;
+    font-size: 1.5rem;
     opacity: 0.85;
   }
   
@@ -1152,15 +1152,6 @@ PROJECTS SECTION
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.95rem;
-}
-
-
-/* “More to come” styling */
-.more-projects-coming {
-  text-align: center;
-  font-style: italic;
-  color: #555;
-  margin: 2rem 0;
 }
 
 /* =========================
