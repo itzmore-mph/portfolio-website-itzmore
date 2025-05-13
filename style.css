@@ -995,14 +995,14 @@ PROJECTS SECTION
 .more-projects-coming {
     text-align: center;
     margin-top: 2rem;
-    color: black
+    color: black;
     font-size: 2rem;
     opacity: 0.85;
   }
   
   .more-projects-coming p::after {
     content: ' ';
-    animation: dots 1.5s infinite steps(3);
+    animation: dots 2s infinite steps(3);
   }
   
   .project-description {
