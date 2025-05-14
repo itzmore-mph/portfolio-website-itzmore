@@ -478,15 +478,15 @@
   }
 
   #privacy {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   #privacy h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   #privacy h2 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   .language-toggle button {
