@@ -79,7 +79,7 @@
     text-align: left;
     border-right: 2px solid currentColor;
     animation:
-      typing-mobile 2s steps(17,end) forwards,
+      typing-mobile 2s steps(18,end) forwards,
       blink 0.75s step-end infinite;
   }
 
@@ -252,7 +252,7 @@
 /* Mobile-only typewriter animation */
 @keyframes typing-mobile {
   from { width: 0ch; }
-  to   { width: 17ch; }
+  to   { width: 18ch; }
 }
 
 @keyframes blink {
