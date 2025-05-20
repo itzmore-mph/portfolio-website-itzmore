@@ -79,7 +79,7 @@
     text-align: left;
     border-right: 2px solid currentColor;
     animation:
-      typing-mobile 2s steps(18,end) forwards,
+      typing-mobile 2s steps(20,end) forwards,
       blink 0.75s step-end infinite;
   }
 
@@ -447,7 +447,7 @@
 
   .logo-typewriter {
     max-width: 90vw;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .project-img {
     width: 100%;

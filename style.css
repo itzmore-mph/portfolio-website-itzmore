@@ -192,20 +192,20 @@ nav { /* Dark background for contrast */
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid currentColor;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .full-typewriter {
     width: 0ch;
     animation:
-      typing-full 5s steps(40,end) forwards,
+      typing-full 5s steps(42,end) forwards,
       blink 0.75s step-end infinite;
   }
 
   .short-typewriter {
     width: 0ch;
     animation:
-      typing-short 3s steps(20,end) forwards,
+      typing-short 3s steps(22,end) forwards,
       blink 0.75s step-end infinite;
   }
 
