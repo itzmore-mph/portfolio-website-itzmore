@@ -67,7 +67,7 @@ This site highlights:
 ## 📫 Contact
 Feel free to connect with me:
 
-📧 moritz_haaf@outlook.com
+📧 itzmore.dev@gmail.com
 
 💼 LinkedIn – Moritz Philipp Haaf
 
